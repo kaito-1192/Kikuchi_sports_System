@@ -17,5 +17,14 @@ namespace Kikushi_sports_System
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Form2取得
+            Form2 form2 = new Form2();
+            //Form2を表示
+            form2.Show();
+            //Form1を非表示
+            this.Visible = false;
+        }
     }
 }
