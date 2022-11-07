@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Kikushi_sports_System
 {
@@ -25,6 +26,18 @@ namespace Kikushi_sports_System
             form2.Show();
             //Form1を非表示
             this.Visible = false;
+
+            using (var con = new SQLiteConnection("Data Source=test.db"))
+            {
+                con.Open();
+                using (SQLiteCommand command = con.CreateCommand())
+                {
+                    command.CommandText =
+                        "create table if not exists t_product(CD INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,phonenumber INTEGER,address TEXT,birth NUMERIC)";
+                    command.ExecuteNonQuery();
+                }
+                con.Close();
+            }
         }
     }
 }

@@ -54,6 +54,7 @@ namespace Kikushi_sports_System
             this.button2.TabIndex = 1;
             this.button2.Text = "会員登録";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
