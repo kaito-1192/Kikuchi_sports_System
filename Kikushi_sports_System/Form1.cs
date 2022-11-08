@@ -27,13 +27,13 @@ namespace Kikushi_sports_System
             //Form1を非表示
             this.Visible = false;
 
-            using (var con = new SQLiteConnection("Data Source=test.db"))
+            using (var con = new SQLiteConnection("Data Source=M_Table.db"))
             {
                 con.Open();
                 using (SQLiteCommand command = con.CreateCommand())
                 {
                     command.CommandText =
-                        "create table if not exists t_product(CD INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,phonenumber INTEGER,address TEXT,birth NUMERIC)";
+                        "create table if not exists t_product (CD INTEGER PRIMARY KEY AUTOINCREMENT,m_name TEXT,m_phonenumber INTEGER,m_address TEXT,m_birth INTEGER)";
                     command.ExecuteNonQuery();
                 }
                 con.Close();

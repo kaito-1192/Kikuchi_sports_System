@@ -85,7 +85,7 @@ namespace Kikushi_sports_System
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(119, 245);
+            this.label4.Location = new System.Drawing.Point(119, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 20);
             this.label4.TabIndex = 5;
@@ -94,7 +94,7 @@ namespace Kikushi_sports_System
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(424, 245);
+            this.label5.Location = new System.Drawing.Point(424, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 6;
@@ -102,14 +102,14 @@ namespace Kikushi_sports_System
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 269);
+            this.textBox3.Location = new System.Drawing.Point(119, 150);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(125, 27);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(424, 269);
+            this.textBox4.Location = new System.Drawing.Point(424, 150);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(140, 27);
             this.textBox4.TabIndex = 8;
@@ -126,12 +126,13 @@ namespace Kikushi_sports_System
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(268, 384);
+            this.button2.Location = new System.Drawing.Point(119, 256);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 38);
             this.button2.TabIndex = 10;
             this.button2.Text = "登録";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form3
             // 
