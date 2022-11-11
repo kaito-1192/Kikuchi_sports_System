@@ -27,48 +27,20 @@ namespace Kikushi_sports_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection con=new SQLiteConnection("Data Source=m_table.db"))
-            {
-                con.Open();
-                using(SQLiteTransaction trans = con.BeginTransaction())
-                {
-                    SQLiteCommand cmd = con.CreateCommand();
-                    //インサート
-                    cmd.CommandText = "INSERT INTO t_product (m_name,m_phonenumber,m_address,m_birth) VALUES(@m_name,@m_phonenumber,@m_address,@m_birth)";
-                    cmd.Parameters.Add("m_name", System.Data.DbType.String);
-                    cmd.Parameters.Add("m_phonenumber", System.Data.DbType.String);
-                    cmd.Parameters.Add("m_address", System.Data.DbType.String);
-                    cmd.Parameters.Add("m_birth",System.Data.DbType.String);
-                    //データ追加
-                    cmd.Parameters["m_name"].Value = textBox1.Text;
-                    cmd.Parameters["m_phonenumber"].Value = textBox2.Text;
-                    cmd.Parameters["m_address"].Value = textBox3.Text;
-                    cmd.Parameters["m_birth"].Value = textBox4.Text;
-                    cmd.ExecuteNonQuery();
-                    //コミット
-                    trans.Commit();
-                }
-            }
 
+            //form4を取得
             Form4 form4 = new Form4();
+            //form4を表示
             form4.Show();
+            //form3を非表示
             this.Visible = false;
 
-        
-        }
+            //form4の内容確認のテキストに入力したテキストを反映
+            form4.textBox1.Text = textBox1.Text;
+            form4.textBox2.Text = textBox2.Text;
+            form4.textBox3.Text = textBox3.Text;
+            form4.textBox4.Text = textBox4.Text;
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
-            {
-                //dataTebleを作成します
-                var dataTable = new DataTable();
-                //SQLの実行
-                var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
-                adapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable;
-
-            }
         }
     }
 }
