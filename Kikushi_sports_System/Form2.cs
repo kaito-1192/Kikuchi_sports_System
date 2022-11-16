@@ -31,5 +31,12 @@ namespace Kikushi_sports_System
             form3.Show();
             this.Visible = false;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.Show();
+            this.Visible = false;
+        }
     }
 }
