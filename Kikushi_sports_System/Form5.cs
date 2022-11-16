@@ -26,17 +26,22 @@ namespace Kikushi_sports_System
                 // DataTableを生成します。
                 var dataTable = new DataTable();
 
+                //SQL生成(名前または番号を基にデータを検索)
                 cmd.CommandText = "SELECT CD,m_name,m_phonenumber,m_address,m_birth FROM t_product WHERE m_name =@M_name OR CD =@Cd";
+                //パラメータセット
                 cmd.Parameters.Add("Cd", System.Data.DbType.String);
                 cmd.Parameters["Cd"].Value = textBox1.Text;
                 cmd.Parameters.Add("M_name", System.Data.DbType.String);
                 cmd.Parameters["M_name"].Value = textBox1.Text;
 
-
+                //dataTableの初期化
                 dataTable.Clear();
+                //SQLの結果をdataTableに格納
                 dataTable.Load(cmd.ExecuteReader());
+                //グリッドビューに表示
                 dataGridView1.DataSource = dataTable;
 
+                //グリッドビューの列名設定
                 dataGridView1.Columns[0].HeaderText = "番号";
                 dataGridView1.Columns[1].HeaderText = "氏名";
                 dataGridView1.Columns[2].HeaderText = "電話番号";
@@ -47,10 +52,6 @@ namespace Kikushi_sports_System
             }
         }
 
-        private void Form5_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {

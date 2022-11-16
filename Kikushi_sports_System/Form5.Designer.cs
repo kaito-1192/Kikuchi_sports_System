@@ -95,7 +95,7 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.textBox1);
             this.Name = "Form5";
             this.Text = "Form5";
-            this.Load += new System.EventHandler(this.Form5_Load);
+            //this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
