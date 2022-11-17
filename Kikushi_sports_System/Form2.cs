@@ -38,5 +38,15 @@ namespace Kikushi_sports_System
             form5.Show();
             this.Visible = false;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Form6を取得
+            Form6 form6 = new Form6();
+            //Form6を表示
+            form6.Show();
+            //Form2を非表示
+            this.Visible = false;
+        }
     }
 }

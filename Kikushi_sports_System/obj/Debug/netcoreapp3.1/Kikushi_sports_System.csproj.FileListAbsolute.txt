@@ -33,3 +33,5 @@ C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form3.resources
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form4.resources
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form5.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form6.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form7.resources

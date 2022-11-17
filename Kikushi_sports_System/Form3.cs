@@ -30,17 +30,27 @@ namespace Kikushi_sports_System
 
             //form4を取得
             Form4 form4 = new Form4();
+           
+            //パスワードが4文字以上であれば次に進む
+            if (textBox5.Text.Length > 3)
+            { 
             //form4を表示
             form4.Show();
             //form3を非表示
             this.Visible = false;
 
-            //form4の内容確認のテキストに入力したテキストを反映
-            form4.textBox1.Text = textBox1.Text;
-            form4.textBox2.Text = textBox2.Text;
-            form4.textBox3.Text = textBox3.Text;
-            form4.textBox4.Text = textBox4.Text;
-
+                //form4の内容確認のテキストに入力したテキストを反映
+                form4.textBox1.Text = textBox1.Text;
+                form4.textBox2.Text = textBox2.Text;
+                form4.textBox3.Text = textBox3.Text;
+                form4.textBox4.Text = textBox4.Text;
+                form4.textBox5.Text = textBox5.Text;
+            }
+            //エラーメッセージ表示
+            else
+            {
+                MessageBox.Show("パスワードを4文字以上入力してください。","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }
