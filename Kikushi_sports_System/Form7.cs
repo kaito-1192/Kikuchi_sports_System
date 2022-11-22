@@ -18,6 +18,13 @@ namespace Kikushi_sports_System
         private void Form7_Load(object sender, EventArgs e)
         {
             textBox6.ReadOnly = true;
+
+            dataGridView1.Columns[0].HeaderText = "番号";
+            dataGridView1.Columns[1].HeaderText = "氏名";
+            dataGridView1.Columns[2].HeaderText = "電話番号";
+            dataGridView1.Columns[3].HeaderText = "住所";
+            dataGridView1.Columns[4].HeaderText = "生年月日";
+            dataGridView1.Columns[5].HeaderText = "パスワード";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,10 +36,10 @@ namespace Kikushi_sports_System
                 {
                     SQLiteCommand cmd = con.CreateCommand();
                     
-                    if (textBox5.Text.Length > 3)
+                    if (textBox5.Text.Length > 3 && textBox1.Text!=""&& textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&& textBox5.Text != "")
                     {
                         cmd.CommandText =
-                            "UPDATE t_product set m_name = @M_name, m_phonenumber = @M_phonenumber, m_address = @M_address, m_birth = @M_birth, m_pass = @M_pass WHERE CD = @Cd;";
+                            "UPDATE t_product set m_name = @M_name, m_phonenumber = @M_phonenumber, m_address = @M_address, m_birth = @M_birth, m_pass = @M_pass WHERE CD = @Cd ;";
                         // パラメータセット
                         cmd.Parameters.Add("M_name", System.Data.DbType.String);
                         cmd.Parameters.Add("M_phonenumber", System.Data.DbType.String);
@@ -60,7 +67,7 @@ namespace Kikushi_sports_System
                     }
                     else
                     {
-                        MessageBox.Show("パスワードを4文字以上入力してください。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("入力エラー。※パスワードは4文字以上です", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     
                 }
