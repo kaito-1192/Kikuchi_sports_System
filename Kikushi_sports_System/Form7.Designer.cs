@@ -46,6 +46,7 @@ namespace Kikushi_sports_System
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@ namespace Kikushi_sports_System
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(493, 357);
+            this.label5.Location = new System.Drawing.Point(466, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 5;
@@ -134,14 +135,14 @@ namespace Kikushi_sports_System
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(493, 380);
+            this.textBox5.Location = new System.Drawing.Point(466, 288);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(125, 27);
             this.textBox5.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(674, 380);
+            this.button1.Location = new System.Drawing.Point(466, 357);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 58);
             this.button1.TabIndex = 11;
@@ -186,17 +187,28 @@ namespace Kikushi_sports_System
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(563, 357);
+            this.label9.Location = new System.Drawing.Point(536, 265);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 16;
             this.label9.Text = "※4文字以上";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(655, 357);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 58);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "メニューに戻る";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -242,5 +254,6 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
     }
 }

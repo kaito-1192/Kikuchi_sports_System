@@ -38,16 +38,23 @@ namespace Kikushi_sports_System
                 dataTable.Clear();
                 //SQLの結果をdataTableに格納
                 dataTable.Load(cmd.ExecuteReader());
-                //グリッドビューに表示
-                dataGridView1.DataSource = dataTable;
+                if (dataTable.Rows.Count == 0)
+                {
+                    MessageBox.Show("検索結果がありませんでした。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    //グリッドビューに表示
+                    dataGridView1.DataSource = dataTable;
 
-                //グリッドビューの列名設定
-                dataGridView1.Columns[0].HeaderText = "番号";
-                dataGridView1.Columns[1].HeaderText = "氏名";
-                dataGridView1.Columns[2].HeaderText = "電話番号";
-                dataGridView1.Columns[3].HeaderText = "住所";
-                dataGridView1.Columns[4].HeaderText = "生年月日";
-                dataGridView1.Columns[5].HeaderText = "パスワード";
+                    //グリッドビューの列名設定
+                    dataGridView1.Columns[0].HeaderText = "番号";
+                    dataGridView1.Columns[1].HeaderText = "氏名";
+                    dataGridView1.Columns[2].HeaderText = "電話番号";
+                    dataGridView1.Columns[3].HeaderText = "住所";
+                    dataGridView1.Columns[4].HeaderText = "生年月日";
+                    dataGridView1.Columns[5].HeaderText = "パスワード";
+                }
 
                 con.Close();
             }

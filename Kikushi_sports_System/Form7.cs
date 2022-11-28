@@ -67,11 +67,19 @@ namespace Kikushi_sports_System
                     }
                     else
                     {
-                        MessageBox.Show("入力エラー。※パスワードは4文字以上です", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //メニューに戻る
+            Form2 form2 = new Form2();
+            form2.Show();
+            this.Visible = false;
         }
     }
 }

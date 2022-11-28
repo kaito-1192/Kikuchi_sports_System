@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Kikushi_sports_System
 {
@@ -47,6 +48,32 @@ namespace Kikushi_sports_System
             form6.Show();
             //Form2を非表示
             this.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //Form6を取得
+            Form8 form8 = new Form8();
+            //Form6を表示
+            form8.Show();
+            //Form2を非表示
+            this.Visible = false;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
+            {
+                con.Open();
+                using (SQLiteTransaction trans = con.BeginTransaction())
+                {
+                    SQLiteCommand cmd = con.CreateCommand();
+
+                    cmd.CommandText = "select MAX(CD) FROM product";
+                    var exr = cmd.ExecuteReader();
+                    textBox1.Text = exr["CD"] as string;
+                }
+            }
         }
     }
 }
