@@ -35,13 +35,14 @@ namespace Kikushi_sports_System
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(655, 409);
+            this.button1.Location = new System.Drawing.Point(655, 388);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 29);
+            this.button1.Size = new System.Drawing.Size(133, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "前の画面に戻る";
             this.button1.UseVisualStyleBackColor = true;
@@ -89,16 +90,27 @@ namespace Kikushi_sports_System
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(663, 58);
+            this.textBox1.Location = new System.Drawing.Point(740, 55);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.Size = new System.Drawing.Size(48, 27);
             this.textBox1.TabIndex = 5;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(665, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "会員番号";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -121,5 +133,6 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

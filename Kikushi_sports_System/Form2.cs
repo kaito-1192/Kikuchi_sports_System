@@ -62,16 +62,45 @@ namespace Kikushi_sports_System
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            //テキストボックスを編集できないようにする
+            textBox1.ReadOnly = true;
             using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
             {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
+                try
                 {
-                    SQLiteCommand cmd = con.CreateCommand();
+                    con.Open();
+                    using (SQLiteTransaction trans = con.BeginTransaction())
+                    {
+                        //string型の会員番号表示変数
+                        string cd = null;
+                        SQLiteCommand cmd = con.CreateCommand();
 
-                    cmd.CommandText = "select MAX(CD) FROM product";
-                    var exr = cmd.ExecuteReader();
-                    textBox1.Text = exr["CD"] as string;
+                        //CD(会員番号)カラムの中で最大の数値を参照
+                        cmd.CommandText = "SELECT MAX(CD) FROM t_product";
+                        //readerにSQLの結果を格納
+                        SQLiteDataReader reader = cmd.ExecuteReader();
+
+                        //データがある時
+                        while (reader.Read())
+                        {
+                            //cdに値を格納
+                            cd = reader.GetValue(0).ToString();
+                            //テキストボックスに表示
+                            textBox1.Text = cd;
+                        }
+                        //会員がだれもいないとき、登録画面しか選べないようにする
+                        if (cd =="")
+                        {
+                            button3.Enabled = false;
+                            button4.Enabled = false;
+                            button5.Enabled = false;
+                        }
+
+                    }
+                }
+                finally
+                {
+                    con.Close();
                 }
             }
         }
