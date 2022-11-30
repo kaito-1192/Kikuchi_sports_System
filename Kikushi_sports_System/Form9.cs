@@ -49,11 +49,11 @@ namespace Kikushi_sports_System
                     }
                 }
 
-                //Form2を取得
-                Form2 form2 = new Form2();
-                //Form2を表示
-                form2.Show();
-                //Form5を非表示
+                //Form1を取得
+                Form1 form1 = new Form1();
+                //Form1を表示
+                form1.Show();
+                //Formを非表示
                 this.Visible = false;
             }
         }

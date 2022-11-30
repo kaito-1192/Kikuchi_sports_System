@@ -54,8 +54,6 @@ namespace Kikushi_sports_System
                 {
                     form7.Show();
                     this.Visible = false;
-
-                   
                 }
                 //グリッドビューの列名設定
                 form7.dataGridView1.Columns[0].HeaderText = "番号";
@@ -83,33 +81,7 @@ namespace Kikushi_sports_System
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            //テキストボックスを編集できないようにする
-            textBox3.ReadOnly = true;
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
-            {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
-                {
-                    //string型の会員番号表示変数
-                    string cd = null;
-                    SQLiteCommand cmd = con.CreateCommand();
-
-                    //CD(会員番号)カラムの中で最大の数値を参照
-                    cmd.CommandText = "SELECT MAX(CD) FROM t_product";
-                    //readerにSQLの結果を格納
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    //データがある時
-                    while (reader.Read())
-                    {
-                        //cdに値を格納
-                        cd = reader.GetValue(0).ToString();
-                        //テキストボックスに表示
-                        textBox3.Text = cd;
-                    }
-                }
-                con.Close();
-            }
+           
         }
     }
 }

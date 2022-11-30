@@ -18,10 +18,10 @@ namespace Kikushi_sports_System
         private void button1_Click(object sender, EventArgs e)
         {
             //Form1取得
-            Form2 form2 = new Form2();
+            Form1 form1 = new Form1();
             //Form1を表示
-            form2.Show();
-            //Form2を非表示
+            form1.Show();
+            //Form3を非表示
             this.Visible = false;
         }
 

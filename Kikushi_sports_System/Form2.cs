@@ -28,9 +28,9 @@ namespace Kikushi_sports_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
-            form3.Show();
-            this.Visible = false;
+            //Form3 form3 = new Form3();
+            //form3.Show();
+            //this.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -66,36 +66,52 @@ namespace Kikushi_sports_System
             textBox1.ReadOnly = true;
             using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
             {
+                //try
+                //{
+                //    con.Open();
+                //    using (SQLiteTransaction trans = con.BeginTransaction())
+                //    {
+                //        //string型の会員番号表示変数
+                //        string cd = null;
+                //        SQLiteCommand cmd = con.CreateCommand();
+
+                //        //CD(会員番号)カラムの中で最大の数値を参照
+                //        cmd.CommandText = "SELECT MAX(CD) FROM t_product";
+                //        //readerにSQLの結果を格納
+                //        SQLiteDataReader reader = cmd.ExecuteReader();
+
+                //        //データがある時
+                //        while (reader.Read())
+                //        {
+                //            //cdに値を格納
+                //            cd = reader.GetValue(0).ToString();
+                //            //テキストボックスに表示
+                //            textBox1.Text = cd;
+                //        }
+
+                //    }
+                //}
+                //finally
+                //{
+                //    con.Close();
+                //}
                 try
                 {
+                    Form1 form1 = new Form1();
                     con.Open();
                     using (SQLiteTransaction trans = con.BeginTransaction())
                     {
-                        //string型の会員番号表示変数
                         string cd = null;
                         SQLiteCommand cmd = con.CreateCommand();
-
-                        //CD(会員番号)カラムの中で最大の数値を参照
-                        cmd.CommandText = "SELECT MAX(CD) FROM t_product";
-                        //readerにSQLの結果を格納
+                        cmd.CommandText = "SELECT CD FROM t_product WHERE m_name=@Name";
+                        cmd.Parameters.Add("Name", System.Data.DbType.String);
+                        cmd.Parameters["Name"].Value = Form1._name;
                         SQLiteDataReader reader = cmd.ExecuteReader();
-
-                        //データがある時
                         while (reader.Read())
                         {
-                            //cdに値を格納
                             cd = reader.GetValue(0).ToString();
-                            //テキストボックスに表示
                             textBox1.Text = cd;
                         }
-                        //会員がだれもいないとき、登録画面しか選べないようにする
-                        if (cd =="")
-                        {
-                            button3.Enabled = false;
-                            button4.Enabled = false;
-                            button5.Enabled = false;
-                        }
-
                     }
                 }
                 finally

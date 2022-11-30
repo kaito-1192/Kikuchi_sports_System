@@ -29,47 +29,54 @@ namespace Kikushi_sports_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
-            {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
-                {
-                    SQLiteCommand cmd = con.CreateCommand();
-                    
-                    if (textBox5.Text.Length > 3 && textBox1.Text!=""&& textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&& textBox5.Text != "")
-                    {
-                        cmd.CommandText =
-                            "UPDATE t_product set m_name = @M_name, m_phonenumber = @M_phonenumber, m_address = @M_address, m_birth = @M_birth, m_pass = @M_pass WHERE CD = @Cd ;";
-                        // パラメータセット
-                        cmd.Parameters.Add("M_name", System.Data.DbType.String);
-                        cmd.Parameters.Add("M_phonenumber", System.Data.DbType.String);
-                        cmd.Parameters.Add("M_address", System.Data.DbType.String);
-                        cmd.Parameters.Add("M_birth", System.Data.DbType.String);
-                        cmd.Parameters.Add("M_pass", System.Data.DbType.String);
-                        cmd.Parameters.Add("Cd", System.Data.DbType.String);
-                        // データ修正
-                        cmd.Parameters["M_name"].Value = textBox1.Text;
-                        cmd.Parameters["M_phonenumber"].Value = textBox2.Text;
-                        cmd.Parameters["M_address"].Value = textBox3.Text;
-                        cmd.Parameters["M_birth"].Value = textBox4.Text;
-                        cmd.Parameters["M_pass"].Value = textBox5.Text;
-                        cmd.Parameters["Cd"].Value = textBox6.Text;
-                        cmd.ExecuteNonQuery();
-                        // コミット
-                        trans.Commit();
+            //データ削除の確認
+            DialogResult result = MessageBox.Show("データを修正しますか？",
+                "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-                        //修正完了メッセージ
-                        MessageBox.Show("修正が完了しました。", "完了画面");
-                        //メニューに戻る
-                        Form2 form2 = new Form2();
-                        form2.Show();
-                        this.Visible = false;
-                    }
-                    else
+            if (result == DialogResult.Yes)
+            {
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
+                {
+                    con.Open();
+                    using (SQLiteTransaction trans = con.BeginTransaction())
                     {
-                        MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        SQLiteCommand cmd = con.CreateCommand();
+
+                        if (textBox5.Text.Length > 3 && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
+                        {
+                            cmd.CommandText =
+                                "UPDATE t_product set m_name = @M_name, m_phonenumber = @M_phonenumber, m_address = @M_address, m_birth = @M_birth, m_pass = @M_pass WHERE CD = @Cd ;";
+                            // パラメータセット
+                            cmd.Parameters.Add("M_name", System.Data.DbType.String);
+                            cmd.Parameters.Add("M_phonenumber", System.Data.DbType.String);
+                            cmd.Parameters.Add("M_address", System.Data.DbType.String);
+                            cmd.Parameters.Add("M_birth", System.Data.DbType.String);
+                            cmd.Parameters.Add("M_pass", System.Data.DbType.String);
+                            cmd.Parameters.Add("Cd", System.Data.DbType.String);
+                            // データ修正
+                            cmd.Parameters["M_name"].Value = textBox1.Text;
+                            cmd.Parameters["M_phonenumber"].Value = textBox2.Text;
+                            cmd.Parameters["M_address"].Value = textBox3.Text;
+                            cmd.Parameters["M_birth"].Value = textBox4.Text;
+                            cmd.Parameters["M_pass"].Value = textBox5.Text;
+                            cmd.Parameters["Cd"].Value = textBox6.Text;
+                            cmd.ExecuteNonQuery();
+                            // コミット
+                            trans.Commit();
+
+                            //修正完了メッセージ
+                            MessageBox.Show("修正が完了しました。", "完了画面");
+                            //メニューに戻る
+                            Form2 form2 = new Form2();
+                            form2.Show();
+                            this.Visible = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
-                    
                 }
             }
         }
