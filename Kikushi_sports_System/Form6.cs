@@ -11,9 +11,16 @@ namespace Kikushi_sports_System
 {
     public partial class Form6 : Form
     {
+        private bool _isOpen = false;
         public Form6()
         {
             InitializeComponent();
+        }
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+            //テキストボックスののぞき見防止(テキストを＊で表示)
+            textBox2.PasswordChar = '*';
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,9 +86,20 @@ namespace Kikushi_sports_System
             this.Visible = false;
         }
 
-        private void Form6_Load(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-           
+            if (!_isOpen)
+            {
+                //目を押したとき、テキスト表示
+                textBox2.PasswordChar = default;
+                _isOpen = true;
+            }
+            else if (_isOpen)
+            {
+                //もう一度押したとき、テキスト非表示
+                textBox2.PasswordChar = '*';
+                _isOpen = false;
+            }
         }
     }
 }

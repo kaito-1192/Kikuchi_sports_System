@@ -45,6 +45,9 @@ namespace Kikushi_sports_System
             this.label8 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -176,17 +179,46 @@ namespace Kikushi_sports_System
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(199, 220);
+            this.label9.Location = new System.Drawing.Point(189, 220);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 15;
             this.label9.Text = "※4文字以上";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(250, 246);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 20);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "👁";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(424, 239);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(125, 27);
+            this.textBox6.TabIndex = 17;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(424, 208);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(119, 20);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "パスワード(再入力)";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label8);
@@ -205,6 +237,7 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +261,8 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label11;
     }
 }

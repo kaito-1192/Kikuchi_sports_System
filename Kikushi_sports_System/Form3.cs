@@ -10,9 +10,19 @@ namespace Kikushi_sports_System
 {
     public partial class Form3 : Form
     {
+        private bool _isOpen = false;
         public Form3()
         {
             InitializeComponent();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            //テキストボックスののぞき見防止(テキストを＊で表示)
+            textBox5.PasswordChar = '*';
+
+            //テキストボックスののぞき見防止(テキストを＊で表示)
+            textBox6.PasswordChar = '*';
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +42,7 @@ namespace Kikushi_sports_System
             Form4 form4 = new Form4();
            
             //パスワードが4文字以上であれば次に進む
-            if (textBox5.Text.Length > 3)
+            if (textBox5.Text.Length > 3&&textBox5.Text==textBox6.Text)
             { 
             //form4を表示
             form4.Show();
@@ -49,7 +59,25 @@ namespace Kikushi_sports_System
             //エラーメッセージ表示
             else
             {
-                MessageBox.Show("パスワードを4文字以上入力してください。","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("入力エラー", "エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+       
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            if (!_isOpen)
+            {
+                //目を押したとき、テキスト表示
+                textBox5.PasswordChar = default;
+                _isOpen = true;
+            }
+            else if (_isOpen)
+            {
+                //もう一度押したとき、テキスト非表示
+                textBox5.PasswordChar = '*';
+                _isOpen = false;
             }
         }
     }

@@ -39,15 +39,16 @@ namespace Kikushi_sports_System
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(658, 398);
+            this.button1.Location = new System.Drawing.Point(658, 383);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 29);
+            this.button1.Size = new System.Drawing.Size(130, 55);
             this.button1.TabIndex = 1;
             this.button1.Text = "前の画面に戻る";
             this.button1.UseVisualStyleBackColor = true;
@@ -83,9 +84,9 @@ namespace Kikushi_sports_System
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(332, 295);
+            this.button2.Location = new System.Drawing.Point(313, 302);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
+            this.button2.Size = new System.Drawing.Size(116, 60);
             this.button2.TabIndex = 6;
             this.button2.Text = "登録";
             this.button2.UseVisualStyleBackColor = true;
@@ -127,29 +128,40 @@ namespace Kikushi_sports_System
             this.label4.TabIndex = 10;
             this.label4.Text = "生年月日";
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(188, 251);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(125, 27);
+            this.textBox5.TabIndex = 11;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 228);
+            this.label5.Location = new System.Drawing.Point(188, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 12;
             this.label5.Text = "パスワード";
             // 
-            // textBox5
+            // label6
             // 
-            this.textBox5.Location = new System.Drawing.Point(188, 252);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 12;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(320, 251);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "👁";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -181,5 +193,6 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label6;
     }
 }

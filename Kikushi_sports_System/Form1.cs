@@ -14,6 +14,8 @@ namespace Kikushi_sports_System
     public partial class Form1 : Form
     {
         public static string _name = "";
+        private bool _isOpen = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,25 +23,9 @@ namespace Kikushi_sports_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ////Form2取得
-            //Form2 form2 = new Form2();
-            ////Form2を表示
-            //form2.Show();
-            ////Form1を非表示
-            //this.Visible = false;
-
+         
             using (var con = new SQLiteConnection("Data Source=M_Table.db"))
             {
-
-                //con.Open();
-                //using (SQLiteCommand command = con.CreateCommand())
-                //{
-                //    command.CommandText =
-                //        "create table if not exists t_product (CD INTEGER PRIMARY KEY AUTOINCREMENT,m_name TEXT,m_phonenumber TEXT,m_address TEXT,m_birth TEXT,m_pass TEXT)";
-                //    command.ExecuteNonQuery();
-                //}
-                //con.Close();
-
                 con.Open();
                 SQLiteCommand cmd = con.CreateCommand();
 
@@ -82,22 +68,11 @@ namespace Kikushi_sports_System
             Form3 form3 = new Form3();
             form3.Show();
             this.Visible = false;
-
-            //using (var con = new SQLiteConnection("Data Source=M_Table.db"))
-            //{
-            //    con.Open();
-            //    using (SQLiteCommand command = con.CreateCommand())
-            //    {
-            //        command.CommandText =
-            //            "create table if not exists t_product (CD INTEGER PRIMARY KEY AUTOINCREMENT,m_name TEXT,m_phonenumber TEXT,m_address TEXT,m_birth TEXT,m_pass TEXT)";
-            //        command.ExecuteNonQuery();
-            //    }
-            //    con.Close();
-            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //table作成
             using (var con = new SQLiteConnection("Data Source=M_Table.db"))
             {
                 con.Open();
@@ -108,6 +83,26 @@ namespace Kikushi_sports_System
                     command.ExecuteNonQuery();
                 }
                 con.Close();
+            }
+
+            //テキストボックスののぞき見防止(テキストを＊で表示)
+            textBox2.PasswordChar = '*';
+        }
+
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            if (!_isOpen)
+            {
+                //目を押したとき、テキスト表示
+                textBox2.PasswordChar = default;
+                _isOpen = true;
+            }
+            else if (_isOpen)
+            {
+                //もう一度押したとき、テキスト非表示
+                textBox2.PasswordChar = '*';
+                _isOpen = false;
             }
         }
     }

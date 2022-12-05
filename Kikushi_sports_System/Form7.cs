@@ -75,7 +75,6 @@ namespace Kikushi_sports_System
                         {
                             MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
                     }
                 }
             }

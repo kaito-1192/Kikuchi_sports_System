@@ -35,6 +35,7 @@ namespace Kikushi_sports_System
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -89,11 +90,23 @@ namespace Kikushi_sports_System
             this.label2.TabIndex = 5;
             this.label2.Text = "パスワード";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(439, 182);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "👁";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -116,6 +129,7 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
