@@ -15,7 +15,14 @@ namespace Kikushi_sports_System
         {
             InitializeComponent();
         }
-
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            //dataGridViewの設定
+            dataGridView1.ReadOnly = true;
+  
+            // 行ヘッダー非表示
+            dataGridView1.RowHeadersVisible = false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
@@ -71,9 +78,6 @@ namespace Kikushi_sports_System
             this.Visible = false;
         }
 
-        private void Form5_Load(object sender, EventArgs e)
-        {
-          
-        }
+       
     }
 }

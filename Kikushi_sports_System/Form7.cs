@@ -19,6 +19,12 @@ namespace Kikushi_sports_System
         {
             textBox6.ReadOnly = true;
 
+            //dataGridViewの設定
+            dataGridView1.ReadOnly = true;
+
+            // 行ヘッダー非表示
+            dataGridView1.RowHeadersVisible = false;
+
             dataGridView1.Columns[0].HeaderText = "番号";
             dataGridView1.Columns[1].HeaderText = "氏名";
             dataGridView1.Columns[2].HeaderText = "電話番号";
@@ -41,7 +47,7 @@ namespace Kikushi_sports_System
                     using (SQLiteTransaction trans = con.BeginTransaction())
                     {
                         SQLiteCommand cmd = con.CreateCommand();
-
+                        //パスワードが4文字以下かつ各項目に空白があれば修正しない
                         if (textBox5.Text.Length > 3 && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
                         {
                             cmd.CommandText =

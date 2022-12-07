@@ -28,7 +28,7 @@ namespace Kikushi_sports_System
         private void button1_Click(object sender, EventArgs e)
         {
             //Form1取得
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
             //Form1を表示
             form1.Show();
             //Form3を非表示

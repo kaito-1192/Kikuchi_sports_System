@@ -1,7 +1,7 @@
 ﻿
 namespace Kikushi_sports_System
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace Kikushi_sports_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.Login_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -38,15 +38,15 @@ namespace Kikushi_sports_System
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // Login_button
             // 
-            this.button1.Location = new System.Drawing.Point(281, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 65);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ログイン";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Login_button.Location = new System.Drawing.Point(281, 267);
+            this.Login_button.Name = "Login_button";
+            this.Login_button.Size = new System.Drawing.Size(188, 65);
+            this.Login_button.TabIndex = 0;
+            this.Login_button.Text = "ログイン";
+            this.Login_button.UseVisualStyleBackColor = true;
+            this.Login_button.Click += new System.EventHandler(this.Login_button_Click);
             // 
             // button2
             // 
@@ -100,7 +100,7 @@ namespace Kikushi_sports_System
             this.label3.Text = "👁";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,10 +112,10 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.Login_button);
+            this.Name = "Login";
+            this.Text = "ログイン画面";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +123,7 @@ namespace Kikushi_sports_System
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Login_button;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;

@@ -20,6 +20,19 @@ namespace Kikushi_sports_System
         {
             //textboxを編集できないようにする
             textBox1.ReadOnly = true;
+
+            //dataGridViewの設定
+            dataGridView1.ReadOnly = true;
+
+            // 行ヘッダー非表示
+            dataGridView1.RowHeadersVisible = false;
+
+            dataGridView1.Columns[0].HeaderText = "番号";
+            dataGridView1.Columns[1].HeaderText = "氏名";
+            dataGridView1.Columns[2].HeaderText = "電話番号";
+            dataGridView1.Columns[3].HeaderText = "住所";
+            dataGridView1.Columns[4].HeaderText = "生年月日";
+            dataGridView1.Columns[5].HeaderText = "パスワード";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +63,7 @@ namespace Kikushi_sports_System
                 }
 
                 //Form1を取得
-                Form1 form1 = new Form1();
+                Login form1 = new Login();
                 //Form1を表示
                 form1.Show();
                 //Formを非表示

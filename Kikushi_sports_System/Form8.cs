@@ -61,17 +61,8 @@ namespace Kikushi_sports_System
                 {
                     form9.Show();
                     this.Visible = false;
-
-
                 }
-                //グリッドビューの列名設定
-                form9.dataGridView1.Columns[0].HeaderText = "番号";
-                form9.dataGridView1.Columns[1].HeaderText = "氏名";
-                form9.dataGridView1.Columns[2].HeaderText = "電話番号";
-                form9.dataGridView1.Columns[3].HeaderText = "住所";
-                form9.dataGridView1.Columns[4].HeaderText = "生年月日";
-                form9.dataGridView1.Columns[5].HeaderText = "パスワード";
-
+               
                 //form7に会員番号を渡す
                 form9.textBox1.Text = textBox1.Text;
                 con.Close();

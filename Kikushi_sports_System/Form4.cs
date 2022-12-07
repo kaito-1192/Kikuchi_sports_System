@@ -67,7 +67,7 @@ namespace Kikushi_sports_System
             //登録完了メッセージ
             MessageBox.Show("登録が完了しました。","完了画面");
             //メニューに戻る
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
             form1.Show();
             this.Visible = false;
         }

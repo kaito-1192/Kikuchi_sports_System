@@ -1,27 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
 namespace Kikushi_sports_System
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         public static string _name = "";
         private bool _isOpen = false;
 
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// DBに接続、名前とパスワードで認証
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Login_button_Click(object sender, EventArgs e)
         {
          
             using (var con = new SQLiteConnection("Data Source=M_Table.db"))
@@ -70,7 +69,7 @@ namespace Kikushi_sports_System
             this.Visible = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
             //table作成
             using (var con = new SQLiteConnection("Data Source=M_Table.db"))
@@ -97,6 +96,7 @@ namespace Kikushi_sports_System
                 //目を押したとき、テキスト表示
                 textBox2.PasswordChar = default;
                 _isOpen = true;
+               
             }
             else if (_isOpen)
             {

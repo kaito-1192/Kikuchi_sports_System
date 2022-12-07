@@ -19,7 +19,7 @@ namespace Kikushi_sports_System
         private void button1_Click(object sender, EventArgs e)
         {
             //Form1取得
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
             //Form1を表示
             form1.Show();
             //Form2を非表示
@@ -64,8 +64,10 @@ namespace Kikushi_sports_System
         {
             //テキストボックスを編集できないようにする
             textBox1.ReadOnly = true;
+            
             using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
             {
+                
                 //try
                 //{
                 //    con.Open();
@@ -97,7 +99,7 @@ namespace Kikushi_sports_System
                 //}
                 try
                 {
-                    Form1 form1 = new Form1();
+                    Login form1 = new Login();
                     con.Open();
                     using (SQLiteTransaction trans = con.BeginTransaction())
                     {
@@ -105,7 +107,7 @@ namespace Kikushi_sports_System
                         SQLiteCommand cmd = con.CreateCommand();
                         cmd.CommandText = "SELECT CD FROM t_product WHERE m_name=@Name";
                         cmd.Parameters.Add("Name", System.Data.DbType.String);
-                        cmd.Parameters["Name"].Value = Form1._name;
+                        cmd.Parameters["Name"].Value = Login._name;
                         SQLiteDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
@@ -118,8 +120,6 @@ namespace Kikushi_sports_System
                 {
                     con.Close();
                 }
-
-
             }
         }
     }
