@@ -1,7 +1,7 @@
 ﻿
 namespace Kikushi_sports_System
 {
-    partial class Form4
+    partial class Regi_check
     {
         /// <summary>
         /// Required designer variable.
@@ -173,7 +173,7 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "会員登録";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

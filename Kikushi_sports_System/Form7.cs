@@ -73,7 +73,7 @@ namespace Kikushi_sports_System
                             //修正完了メッセージ
                             MessageBox.Show("修正が完了しました。", "完了画面");
                             //メニューに戻る
-                            Form2 form2 = new Form2();
+                            Menu form2 = new Menu();
                             form2.Show();
                             this.Visible = false;
                         }
@@ -89,7 +89,7 @@ namespace Kikushi_sports_System
         private void button2_Click(object sender, EventArgs e)
         {
             //メニューに戻る
-            Form2 form2 = new Form2();
+            Menu form2 = new Menu();
             form2.Show();
             this.Visible = false;
         }

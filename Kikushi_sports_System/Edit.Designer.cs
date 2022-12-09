@@ -1,7 +1,7 @@
 ﻿
 namespace Kikushi_sports_System
 {
-    partial class Form6
+    partial class Edit
     {
         /// <summary>
         /// Required designer variable.

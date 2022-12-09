@@ -1,7 +1,7 @@
 ﻿
 namespace Kikushi_sports_System
 {
-    partial class Form5
+    partial class Search
     {
         /// <summary>
         /// Required designer variable.

@@ -19,7 +19,6 @@ C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\bin\Debug
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.csproj.AssemblyReference.cache
-C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form2.resources
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.csproj.GenerateResource.cache
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.AssemblyInfoInputs.cache
@@ -29,12 +28,13 @@ C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.dll
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.pdb
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.genruntimeconfig.cache
-C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form3.resources
-C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form4.resources
-C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form5.resources
-C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form6.resources
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form7.resources
-C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form8.resources
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Form9.resources
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Properties.Resources.resources
 C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Login.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Menu.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Register.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Delete.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Edit.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Regi_check.resources
+C:\Users\s20217043\Desktop\Kikushi_sports_System\Kikushi_sports_System\obj\Debug\netcoreapp3.1\Kikushi_sports_System.Search.resources

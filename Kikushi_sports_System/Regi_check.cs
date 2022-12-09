@@ -9,10 +9,10 @@ using System.Data.SQLite;
 
 namespace Kikushi_sports_System
 {
-    public partial class Form4 : Form
+    public partial class Regi_check : Form
     {
         private bool _isOpen = false;
-        public Form4()
+        public Regi_check()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace Kikushi_sports_System
         private void button1_Click(object sender, EventArgs e)
         {
             //form3を取得
-            Form3 form3 = new Form3();
+            Register form3 = new Register();
             form3.Show();
             this.Visible = false;
         }

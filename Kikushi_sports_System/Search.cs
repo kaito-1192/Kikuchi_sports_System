@@ -9,9 +9,9 @@ using System.Data.SQLite;
 
 namespace Kikushi_sports_System
 {
-    public partial class Form5 : Form
+    public partial class Search : Form
     {
-        public Form5()
+        public Search()
         {
             InitializeComponent();
         }
@@ -71,7 +71,7 @@ namespace Kikushi_sports_System
         private void button2_Click(object sender, EventArgs e)
         {
             //Form2を取得
-            Form2 form2 = new Form2();
+            Menu form2 = new Menu();
             //Form2を表示
             form2.Show();
             //Form5を非表示

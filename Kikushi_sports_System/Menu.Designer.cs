@@ -1,7 +1,7 @@
 ﻿
 namespace Kikushi_sports_System
 {
-    partial class Form2
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@ namespace Kikushi_sports_System
             this.button1.TabIndex = 0;
             this.button1.Text = "前の画面に戻る";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Login_button_Click);
             // 
             // button3
             // 
@@ -55,7 +55,7 @@ namespace Kikushi_sports_System
             this.button3.TabIndex = 2;
             this.button3.Text = "検索";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Search_button_Click);
             // 
             // button4
             // 
@@ -65,7 +65,7 @@ namespace Kikushi_sports_System
             this.button4.TabIndex = 3;
             this.button4.Text = "修正";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Edit_button_Click);
             // 
             // button5
             // 
@@ -75,7 +75,7 @@ namespace Kikushi_sports_System
             this.button5.TabIndex = 4;
             this.button5.Text = "削除";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Delete_button_Click);
             // 
             // textBox1
             // 
@@ -94,7 +94,7 @@ namespace Kikushi_sports_System
             this.label1.TabIndex = 6;
             this.label1.Text = "会員番号";
             // 
-            // Form2
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,9 +105,9 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "Menu";
+            this.Text = "会員メニュー";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

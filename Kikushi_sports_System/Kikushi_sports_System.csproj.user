@@ -4,25 +4,25 @@
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form2.cs">
+    <Compile Update="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form3.cs">
+    <Compile Update="Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form4.cs">
+    <Compile Update="Regi_check.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form5.cs">
+    <Compile Update="Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form6.cs">
+    <Compile Update="Edit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form7.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form8.cs">
+    <Compile Update="Delete.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form9.cs">

@@ -35,7 +35,7 @@ namespace Kikushi_sports_System
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.eyeText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Login_button
@@ -56,7 +56,7 @@ namespace Kikushi_sports_System
             this.button2.TabIndex = 1;
             this.button2.Text = "会員登録";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Register_Click);
             // 
             // textBox1
             // 
@@ -90,15 +90,15 @@ namespace Kikushi_sports_System
             this.label2.TabIndex = 5;
             this.label2.Text = "パスワード";
             // 
-            // label3
+            // eyeText
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(439, 182);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "👁";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.eyeText.AutoSize = true;
+            this.eyeText.Location = new System.Drawing.Point(439, 182);
+            this.eyeText.Name = "eyeText";
+            this.eyeText.Size = new System.Drawing.Size(30, 20);
+            this.eyeText.TabIndex = 7;
+            this.eyeText.Text = "👁";
+            this.eyeText.Click += new System.EventHandler(this.eyeText_Click);
             // 
             // Login
             // 
@@ -106,7 +106,7 @@ namespace Kikushi_sports_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.eyeText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -129,7 +129,7 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label eyeText;
     }
 }
 

@@ -1,71 +1,68 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
 namespace Kikushi_sports_System
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-        public Form2()
+        public Menu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Login_button_Click(object sender, EventArgs e)
         {
-            //Form1取得
+            //ログイン画面情報取得
             Login form1 = new Login();
-            //Form1を表示
+            //ログイン画面を表示
             form1.Show();
-            //Form2を非表示
+            //Menu画面を非表示
             this.Visible = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Search_button_Click(object sender, EventArgs e)
         {
-            //Form3 form3 = new Form3();
-            //form3.Show();
-            //this.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form5 form5 = new Form5();
+            //検索画面情報を取得
+            Search form5 = new Search();
+            //検索画面を表示
             form5.Show();
+            //会員メニュー画面を非表示
             this.Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Edit_button_Click(object sender, EventArgs e)
         {
-            //Form6を取得
-            Form6 form6 = new Form6();
-            //Form6を表示
+            //修正画面情報を取得
+            Edit form6 = new Edit();
+            //修正画面を表示
             form6.Show();
-            //Form2を非表示
+            //会員メニュー画面を非表示
             this.Visible = false;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Delete_button_Click(object sender, EventArgs e)
         {
-            //Form6を取得
-            Form8 form8 = new Form8();
-            //Form6を表示
+            //削除画面情報を取得
+            Delete form8 = new Delete();
+            //削除画面を表示
             form8.Show();
-            //Form2を非表示
+            //会員メニュー画面を非表示
             this.Visible = false;
         }
-
-        private void Form2_Load(object sender, EventArgs e)
+        /// <summary>
+        /// ログイン画面から名前を取得、名前の情報を基に会員番号取得、結果を画面に表示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Menu_Load(object sender, EventArgs e)
         {
             //テキストボックスを編集できないようにする
             textBox1.ReadOnly = true;
-            
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
+
+            //SQLiteのコネクション設定
+            using (SQLiteConnection Menu_con = new SQLiteConnection("Data Source=m_table.db"))
             {
                 
                 //try
@@ -99,16 +96,23 @@ namespace Kikushi_sports_System
                 //}
                 try
                 {
+                    //ログイン画面情報を取得
                     Login form1 = new Login();
-                    con.Open();
-                    using (SQLiteTransaction trans = con.BeginTransaction())
+                    //DBに接続
+                    Menu_con.Open();
+                    using (SQLiteTransaction trans = Menu_con.BeginTransaction())
                     {
+                        //名前の変数
                         string cd = null;
-                        SQLiteCommand cmd = con.CreateCommand();
+                        SQLiteCommand cmd = Menu_con.CreateCommand();
                         cmd.CommandText = "SELECT CD FROM t_product WHERE m_name=@Name";
-                        cmd.Parameters.Add("Name", System.Data.DbType.String);
+                        //名前検索のパラメータ
+                        cmd.Parameters.Add("Name",DbType.String);
                         cmd.Parameters["Name"].Value = Login._name;
+                        //SQLの実行
+                        //結果をreaderに格納
                         SQLiteDataReader reader = cmd.ExecuteReader();
+                        //データがある時
                         while (reader.Read())
                         {
                             cd = reader.GetValue(0).ToString();
@@ -118,7 +122,7 @@ namespace Kikushi_sports_System
                 }
                 finally
                 {
-                    con.Close();
+                    Menu_con.Close();
                 }
             }
         }

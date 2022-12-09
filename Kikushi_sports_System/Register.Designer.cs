@@ -1,7 +1,7 @@
 ﻿
 namespace Kikushi_sports_System
 {
-    partial class Form3
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -130,7 +130,7 @@ namespace Kikushi_sports_System
             this.button1.TabIndex = 9;
             this.button1.Text = "前の画面に戻る";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Login_button_Click);
             // 
             // button2
             // 
@@ -140,7 +140,7 @@ namespace Kikushi_sports_System
             this.button2.TabIndex = 10;
             this.button2.Text = "内容確認";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Check_button_Click);
             // 
             // label6
             // 
@@ -193,7 +193,7 @@ namespace Kikushi_sports_System
             this.label10.Size = new System.Drawing.Size(30, 20);
             this.label10.TabIndex = 16;
             this.label10.Text = "👁";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.label10.Click += new System.EventHandler(this.eyeText_Click);
             // 
             // textBox6
             // 
@@ -237,7 +237,7 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Kikushi_sports_System
 {
-    partial class Form8
+    partial class Delete
     {
         /// <summary>
         /// Required designer variable.
