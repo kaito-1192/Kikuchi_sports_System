@@ -211,7 +211,7 @@ namespace Kikushi_sports_System
             this.label11.TabIndex = 18;
             this.label11.Text = "パスワード(再入力)";
             // 
-            // Form3
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -235,8 +235,8 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "Register";
+            this.Text = "登録";
             this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

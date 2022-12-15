@@ -67,7 +67,7 @@ namespace Kikushi_sports_System
             this.button1.TabIndex = 2;
             this.button1.Text = "検索";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // label1
             // 
@@ -86,7 +86,7 @@ namespace Kikushi_sports_System
             this.button2.TabIndex = 4;
             this.button2.Text = "前の画面に戻る";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Back_Button_Click);
             // 
             // Form5
             // 
@@ -100,7 +100,7 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.textBox1);
             this.Name = "Form5";
             this.Text = "Form5";
-            this.Load += new System.EventHandler(this.Form5_Load);
+            this.Load += new System.EventHandler(this.Serach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

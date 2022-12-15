@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
@@ -11,88 +7,119 @@ namespace Kikushi_sports_System
 {
     public partial class Edit : Form
     {
-        private bool _isOpen = false;
+        //グリッドビューの列指定番号
+        const int _Number = 0;
+        const int _Name = 1;
+        const int _PhoneNumber = 2;
+        const int _Address = 3;
+        const int _Birth = 4;
+        const int _Pass = 5;
         public Edit()
         {
             InitializeComponent();
         }
-
-        private void Form6_Load(object sender, EventArgs e)
+        private void Edit_Load(object sender, EventArgs e)
         {
-            //テキストボックスののぞき見防止(テキストを＊で表示)
-            textBox2.PasswordChar = '*';
+            //会員番号の項目を編集できないようにする
+            textBox6.ReadOnly = true;
+
+            //グリッドビューを編集をできなくする
+            dataGridView1.ReadOnly = true;
+
+            // グリッドビューの行ヘッダー非表示
+            dataGridView1.RowHeadersVisible = false;
+
+            //グリッドビューのヘッダー名を定義
+            dataGridView1.Columns[_Number].HeaderText = "番号";
+            dataGridView1.Columns[_Name].HeaderText = "氏名";
+            dataGridView1.Columns[_PhoneNumber].HeaderText = "電話番号";
+            dataGridView1.Columns[_Address].HeaderText = "住所";
+            dataGridView1.Columns[_Birth].HeaderText = "生年月日";
+            dataGridView1.Columns[_Pass].HeaderText = "パスワード";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 修正確認ダイアログを表示
+        /// YESであれば入力された項目に上書きする
+        /// NOであれば上書きしない
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Edit_Button_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
+            //データ修正の確認
+            DialogResult result = MessageBox.Show("データを修正しますか？",
+                "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            //YESの場合
+            if (result == DialogResult.Yes)
             {
-                con.Open();
-                SQLiteCommand cmd = con.CreateCommand();
-
-                //Formを取得
-                Form7 form7 = new Form7();
-
-                // DataTableを生成します。
-                var dataTable = new DataTable();
-
-                //SQL生成(名前と番号を基にデータを検索)
-                cmd.CommandText = "SELECT CD,m_name ,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE CD =@Cd AND m_pass =@M_pass";
-                //パラメータセット
-                cmd.Parameters.Add("Cd", System.Data.DbType.String); 
-                cmd.Parameters["Cd"].Value = textBox1.Text;
-                cmd.Parameters.Add("M_pass", System.Data.DbType.String);
-                cmd.Parameters["M_pass"].Value = textBox2.Text;
-
-                //datatableを初期化
-                dataTable.Clear();
-                //datatableにSQLの結果を格納
-                dataTable.Load(cmd.ExecuteReader());
-                //form7のグリッドビューに情報表示
-                form7.dataGridView1.DataSource = dataTable;
-
-                //SQLが正しく実行されたかどうか(会員番号とパスワードが正しいか)
-                if (dataTable.Rows.Count==0)
+                using (SQLiteConnection conEdi = new SQLiteConnection("Data Source=m_table.db"))
                 {
-                    //会員番号　or　パスワードが違う
-                    MessageBox.Show("入力された値が違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conEdi.Open();
+                    using (SQLiteTransaction trans = conEdi.BeginTransaction())
+                    {
+                        SQLiteCommand cmd = conEdi.CreateCommand();
+                        //パスワードが4文字以下かつ各項目に空白があれば修正しない
+                        if (textBox5.Text.Length > 3 && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
+                        {
+                            cmd.CommandText =
+                                "UPDATE t_product set m_name = @M_name, m_phonenumber = @M_phonenumber, m_address = @M_address, m_birth = @M_birth, m_pass = @M_pass WHERE CD = @Cd ;";
+                            // 名前のパラメータ定義
+                            cmd.Parameters.Add("M_name",DbType.String);
+                            //電話番号のパラメータ定義
+                            cmd.Parameters.Add("M_phonenumber",DbType.String);
+                            //住所のパラメータ定義
+                            cmd.Parameters.Add("M_address",DbType.String);
+                            //生年月日のパラメータ定義
+                            cmd.Parameters.Add("M_birth",DbType.String);
+                            //パスワードのパラメータ定義
+                            cmd.Parameters.Add("M_pass",DbType.String);
+                            //会員番号のパラメータ定義
+                            cmd.Parameters.Add("Cd",DbType.String);
+                            // 名前のパラメータ
+                            cmd.Parameters["M_name"].Value = textBox1.Text;
+                            //電話番号のパラメータ
+                            cmd.Parameters["M_phonenumber"].Value = textBox2.Text;
+                            //住所のパラメータ
+                            cmd.Parameters["M_address"].Value = textBox3.Text;
+                            //生年月日のパラメータ
+                            cmd.Parameters["M_birth"].Value = textBox4.Text;
+                            //パスワードのパラメータ
+                            cmd.Parameters["M_pass"].Value = textBox5.Text;
+                            //会員番号のパラメータ
+                            cmd.Parameters["Cd"].Value = textBox6.Text;
+
+                            cmd.ExecuteNonQuery();
+                            // コミット
+                            trans.Commit();
+
+                            //修正完了メッセージ
+                            MessageBox.Show("修正が完了しました。", "完了画面");
+                            //会員メニュー情報を取得
+                            Menu Menu = new Menu();
+                            //会員メニューを表示
+                            Menu.Show();
+                            //修正画面を非表示
+                            this.Visible = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
-                else
-                {
-                    form7.Show();
-                    this.Visible = false;
-                }
-              
-                //form7に会員番号を渡す
-                form7.textBox6.Text = textBox1.Text;
-                con.Close();
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Back_Button_Click(object sender, EventArgs e)
         {
-            //Form2を取得
-            Menu form2 = new Menu();
-            //Form2を表示
-            form2.Show();
-            //Form5を非表示
+            //会員メニュー情報を取得
+            Menu Menu = new Menu();
+            //会員メニューを表示
+            Menu.Show();
+            //修正画面を非表示
             this.Visible = false;
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            if (!_isOpen)
-            {
-                //目を押したとき、テキスト表示
-                textBox2.PasswordChar = default;
-                _isOpen = true;
-            }
-            else if (_isOpen)
-            {
-                //もう一度押したとき、テキスト非表示
-                textBox2.PasswordChar = '*';
-                _isOpen = false;
-            }
         }
     }
 }

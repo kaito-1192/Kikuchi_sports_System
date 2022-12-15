@@ -52,7 +52,7 @@ namespace Kikushi_sports_System
             this.button1.TabIndex = 1;
             this.button1.Text = "前の画面に戻る";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.BackRegi_Click);
             // 
             // textBox1
             // 
@@ -90,7 +90,7 @@ namespace Kikushi_sports_System
             this.button2.TabIndex = 6;
             this.button2.Text = "登録";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Reg_Button_Click);
             // 
             // label1
             // 
@@ -152,9 +152,9 @@ namespace Kikushi_sports_System
             this.label6.Size = new System.Drawing.Size(30, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "👁";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Click += new System.EventHandler(this.eyeText_Click);
             // 
-            // Form4
+            // Regi_check
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,9 +172,9 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "Form4";
-            this.Text = "会員登録";
-            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Name = "Regi_check";
+            this.Text = "登録内容確認";
+            this.Load += new System.EventHandler(this.RegiCheck_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

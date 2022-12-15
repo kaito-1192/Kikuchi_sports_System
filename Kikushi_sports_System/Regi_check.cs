@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
@@ -11,13 +7,19 @@ namespace Kikushi_sports_System
 {
     public partial class Regi_check : Form
     {
+        //のぞき見防止のbool変数
         private bool _isOpen = false;
         public Regi_check()
         {
             InitializeComponent();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+        /// <summary>
+        /// 画面を開いたとき、すべての項目の編集をできなくする
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RegiCheck_Load(object sender, EventArgs e)
         {
             //内容確認のテキストを編集できないようにする
             textBox1.ReadOnly = true;
@@ -30,34 +32,56 @@ namespace Kikushi_sports_System
             textBox5.PasswordChar = '*';
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 前の登録画面に戻る
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackRegi_Click(object sender, EventArgs e)
         {
-            //form3を取得
-            Register form3 = new Register();
-            form3.Show();
+            //登録画面の情報を取得
+            Register Register = new Register();
+            //登録画面を表示
+            Register.Show();
+            //登録内容確認画面を非表示
             this.Visible = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 情報の登録処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Reg_Button_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
+            using (SQLiteConnection regCon = new SQLiteConnection("Data Source=m_table.db"))
             {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
+                //DB接続
+                regCon.Open();
+                using (SQLiteTransaction trans = regCon.BeginTransaction())
                 {
-                    SQLiteCommand cmd = con.CreateCommand();
-                    //インサート
+                    SQLiteCommand cmd = regCon.CreateCommand();
+                    //インサート文
                     cmd.CommandText = "INSERT INTO t_product (m_name,m_phonenumber,m_address,m_birth,m_pass) VALUES(@m_name,@m_phonenumber,@m_address,@m_birth,@m_pass)";
-                    cmd.Parameters.Add("m_name", System.Data.DbType.String);
-                    cmd.Parameters.Add("m_phonenumber", System.Data.DbType.String);
-                    cmd.Parameters.Add("m_address", System.Data.DbType.String);
-                    cmd.Parameters.Add("m_birth", System.Data.DbType.String);
-                    cmd.Parameters.Add("m_pass", System.Data.DbType.String);
-                    //データ追加
+                   //名前のパラメータ定義
+                    cmd.Parameters.Add("m_name",DbType.String);
+                   //電話番号のパラメータ定義
+                    cmd.Parameters.Add("m_phonenumber",DbType.String);
+                    //住所のパラメータ定義
+                    cmd.Parameters.Add("m_address",DbType.String);
+                    //生年月日のパラメータ定義
+                    cmd.Parameters.Add("m_birth",DbType.String);
+                    //パスワードのパラメータ定義
+                    cmd.Parameters.Add("m_pass",DbType.String);
+                    //名前のパラメータ
                     cmd.Parameters["m_name"].Value = textBox1.Text;
+                    //電話番号のパラメータ
                     cmd.Parameters["m_phonenumber"].Value = textBox2.Text;
+                    //住所のパラメータ
                     cmd.Parameters["m_address"].Value = textBox3.Text;
+                    //生年月日のパラメータ
                     cmd.Parameters["m_birth"].Value = textBox4.Text;
+                    //パスワードのパラメータ
                     cmd.Parameters["m_pass"].Value = textBox5.Text;
                     cmd.ExecuteNonQuery();
                     //コミット
@@ -66,13 +90,21 @@ namespace Kikushi_sports_System
             }
             //登録完了メッセージ
             MessageBox.Show("登録が完了しました。","完了画面");
-            //メニューに戻る
-            Login form1 = new Login();
-            form1.Show();
+            //ログイン画面の情報を取得
+            Login Login = new Login();
+            //ログイン画面を表示
+            Login.Show();
+            //登録内容確認画面を非表示
             this.Visible = false;
         }
+        /// <summary>
+        /// 目のマークを押したとき、パスワード非表示を解除
+        /// もう一度押したとき、再度パスワード非表示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-        private void label6_Click(object sender, EventArgs e)
+        private void eyeText_Click(object sender, EventArgs e)
         {
             if (!_isOpen)
             {

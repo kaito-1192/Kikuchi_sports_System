@@ -11,43 +11,59 @@ namespace Kikushi_sports_System
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// ログイン画面に戻る処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Login_button_Click(object sender, EventArgs e)
         {
             //ログイン画面情報取得
-            Login form1 = new Login();
+            Login Login = new Login();
             //ログイン画面を表示
-            form1.Show();
+            Login.Show();
             //Menu画面を非表示
             this.Visible = false;
         }
-
+        /// <summary>
+        /// 検索画面に行く処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Search_button_Click(object sender, EventArgs e)
         {
             //検索画面情報を取得
-            Search form5 = new Search();
+            Search Search = new Search();
             //検索画面を表示
-            form5.Show();
+            Search.Show();
             //会員メニュー画面を非表示
             this.Visible = false;
         }
-
+        /// <summary>
+        /// 修正画面に行く処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Edit_button_Click(object sender, EventArgs e)
         {
             //修正画面情報を取得
-            Edit form6 = new Edit();
+            EditLog EditLog = new EditLog();
             //修正画面を表示
-            form6.Show();
+            EditLog.Show();
             //会員メニュー画面を非表示
             this.Visible = false;
         }
-
+        /// <summary>
+        /// 削除画面に行く処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_button_Click(object sender, EventArgs e)
         {
             //削除画面情報を取得
-            Delete form8 = new Delete();
+            DeleteLog DelLog = new DeleteLog();
             //削除画面を表示
-            form8.Show();
+            DelLog.Show();
             //会員メニュー画面を非表示
             this.Visible = false;
         }
@@ -97,7 +113,7 @@ namespace Kikushi_sports_System
                 try
                 {
                     //ログイン画面情報を取得
-                    Login form1 = new Login();
+                    Login Login = new Login();
                     //DBに接続
                     Menu_con.Open();
                     using (SQLiteTransaction trans = Menu_con.BeginTransaction())
@@ -106,22 +122,25 @@ namespace Kikushi_sports_System
                         string cd = null;
                         SQLiteCommand cmd = Menu_con.CreateCommand();
                         cmd.CommandText = "SELECT CD FROM t_product WHERE m_name=@Name";
-                        //名前検索のパラメータ
+                        //名前のパラメータ定義
                         cmd.Parameters.Add("Name",DbType.String);
+                        //名前のパラメータ
                         cmd.Parameters["Name"].Value = Login._name;
-                        //SQLの実行
-                        //結果をreaderに格納
+                        //SQLの実行、結果をreaderに格納、
                         SQLiteDataReader reader = cmd.ExecuteReader();
                         //データがある時
                         while (reader.Read())
                         {
+                            //SQLの結果を格納
                             cd = reader.GetValue(0).ToString();
+                            //会員番号を表示
                             textBox1.Text = cd;
                         }
                     }
                 }
                 finally
                 {
+                    //DB接続解除
                     Menu_con.Close();
                 }
             }

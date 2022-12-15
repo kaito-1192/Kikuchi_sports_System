@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
@@ -11,87 +7,88 @@ namespace Kikushi_sports_System
 {
     public partial class Delete : Form
     {
-        private bool _isOpen = false;
+        //グリッドビューの列指定番号
+        const int _Number = 0;
+        const int _Name = 1;
+        const int _PhoneNumber = 2;
+        const int _Address = 3;
+        const int _Birth = 4;
+        const int _Pass = 5;
         public Delete()
         {
             InitializeComponent();
         }
 
-        private void Form8_Load(object sender, EventArgs e)
+        private void Delete_Load(object sender, EventArgs e)
         {
-            //テキストボックスののぞき見防止(テキストを＊で表示)
-            textBox2.PasswordChar = '*';
+            //textboxを編集できないようにする
+            textBox1.ReadOnly = true;
+
+            //dataGridViewの編集をできなくする
+            dataGridView1.ReadOnly = true;
+
+            // 行ヘッダー非表示
+            dataGridView1.RowHeadersVisible = false;
+
+            //グリッドビューのヘッダー名を定義
+            dataGridView1.Columns[_Number].HeaderText = "番号";
+            dataGridView1.Columns[_Name].HeaderText = "氏名";
+            dataGridView1.Columns[_PhoneNumber].HeaderText = "電話番号";
+            dataGridView1.Columns[_Address].HeaderText = "住所";
+            dataGridView1.Columns[_Birth].HeaderText = "生年月日";
+            dataGridView1.Columns[_Pass].HeaderText = "パスワード";
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 削除確認ダイアログを表示
+        /// YESであれば会員番号をもとに削除する
+        /// NOであれば削除しない
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Del_Button_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
+            //データ削除の確認
+            DialogResult result = MessageBox.Show("データを削除しますか？",
+                "確認",MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
             {
-                con.Open();
-                SQLiteCommand cmd = con.CreateCommand();
-
-                //Formを取得
-                Form9 form9 = new Form9();
-
-                // DataTableを生成します。
-                var dataTable = new DataTable();
-
-                //SQL生成(名前と番号を基にデータを検索)
-                cmd.CommandText = "SELECT CD,m_name ,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE CD =@Cd AND m_pass =@M_pass";
-                //パラメータセット
-                cmd.Parameters.Add("Cd", System.Data.DbType.String);
-                cmd.Parameters["Cd"].Value = textBox1.Text;
-                cmd.Parameters.Add("M_pass", System.Data.DbType.String);
-                cmd.Parameters["M_pass"].Value = textBox2.Text;
-
-                //datatableを初期化
-                dataTable.Clear();
-                //datatableにSQLの結果を格納
-                dataTable.Load(cmd.ExecuteReader());
-                //form7のグリッドビューに情報表示
-                form9.dataGridView1.DataSource = dataTable;
-
-                //SQLが正しく実行されたかどうか(会員番号とパスワードが正しいか)
-                if (dataTable.Rows.Count == 0)
+                //会員番号を基に削除
+                using (SQLiteConnection Delcon = new SQLiteConnection("Data Source=m_table.db"))
                 {
-                    //会員番号　or　パスワードが違う
-                    MessageBox.Show("入力された値が違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Delcon.Open();
+                    using (SQLiteTransaction trans = Delcon.BeginTransaction())
+                    {
+                        SQLiteCommand cmd = Delcon.CreateCommand();
+                        //SQL
+                        cmd.CommandText = "DELETE FROM t_product WHERE CD = @Cd;";
+                        //会員番号のパラメータ定義
+                        cmd.Parameters.Add("Cd",DbType.String);
+                        //会員番号のパラメータ
+                        cmd.Parameters["Cd"].Value = textBox1.Text;
+                        cmd.ExecuteNonQuery();
+                        // コミット
+                        trans.Commit();
+                    }
                 }
-                else
-                {
-                    form9.Show();
-                    this.Visible = false;
-                }
-               
-                //form7に会員番号を渡す
-                form9.textBox1.Text = textBox1.Text;
-                con.Close();
+
+                //ログイン画面情報を取得
+                Login form1 = new Login();
+                //ログイン画面を表示
+                form1.Show();
+                //削除を非表示
+                this.Visible = false;
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+
+        private void Back_Button_Click(object sender, EventArgs e)
         {
-            //Form2を取得
+            //会員メニュー画面情報を取得
             Menu form2 = new Menu();
-            //Form2を表示
+            //会員メニュー画面を表示
             form2.Show();
-            //Form5を非表示
+            //削除画面を非表示
             this.Visible = false;
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            if (!_isOpen)
-            {
-                //目を押したとき、テキスト表示
-                textBox2.PasswordChar = default;
-                _isOpen = true;
-            }
-            else if (_isOpen)
-            {
-                //もう一度押したとき、テキスト非表示
-                textBox2.PasswordChar = '*';
-                _isOpen = false;
-            }
         }
     }
 }

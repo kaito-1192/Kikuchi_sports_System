@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
@@ -11,40 +7,62 @@ namespace Kikushi_sports_System
 {
     public partial class Search : Form
     {
+        //グリッドビューの列指定番号
+        const int _Number = 0;
+        const int _Name = 1;
+        const int _PhoneNumber = 2;
+        const int _Address = 3;
+        const int _Birth = 4;
+        const int _Pass = 5;
         public Search()
         {
             InitializeComponent();
         }
-        private void Form5_Load(object sender, EventArgs e)
+        /// <summary>
+        /// 検索画面を開いたらグリッドビューの設定をする
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Serach_Load(object sender, EventArgs e)
         {
-            //dataGridViewの設定
+            //dataGridViewの編集をできなくする
             dataGridView1.ReadOnly = true;
   
             // 行ヘッダー非表示
             dataGridView1.RowHeadersVisible = false;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=m_table.db"))
-            {
-                con.Open();
-                SQLiteCommand cmd = con.CreateCommand();
 
-                // DataTableを生成します。
-                var dataTable = new DataTable();
+        /// <summary>
+        /// 検索画面を押したとき入力された項目を基に情報を検索する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Search_Button_Click(object sender, EventArgs e)
+        {
+            using (SQLiteConnection Searcon = new SQLiteConnection("Data Source=m_table.db"))
+            {
+                Searcon.Open();
+                SQLiteCommand cmd = Searcon.CreateCommand();
+
+                // DataTableを生成する
+                DataTable dataTable = new DataTable();
 
                 //SQL生成(名前または番号を基にデータを検索)
                 cmd.CommandText = "SELECT CD,m_name,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE m_pass =@M_pass OR CD =@Cd";
-                //パラメータセット
-                cmd.Parameters.Add("Cd", System.Data.DbType.String);
+                //会員番号のパラメータ定義
+                cmd.Parameters.Add("Cd",DbType.String);
+                //会員番号のパラメータ
                 cmd.Parameters["Cd"].Value = textBox1.Text;
-                cmd.Parameters.Add("M_pass", System.Data.DbType.String);
+                //パスワードのパラメータ定義
+                cmd.Parameters.Add("M_pass",DbType.String);
+                //パスワードのパラメータ
                 cmd.Parameters["M_pass"].Value = textBox1.Text;
 
                 //dataTableの初期化
                 dataTable.Clear();
                 //SQLの結果をdataTableに格納
                 dataTable.Load(cmd.ExecuteReader());
+                //detaTableに結果がないとき(行が0のとき)エラーメッセージを表示
                 if (dataTable.Rows.Count == 0)
                 {
                     MessageBox.Show("検索結果がありませんでした。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,25 +73,25 @@ namespace Kikushi_sports_System
                     dataGridView1.DataSource = dataTable;
 
                     //グリッドビューの列名設定
-                    dataGridView1.Columns[0].HeaderText = "番号";
-                    dataGridView1.Columns[1].HeaderText = "氏名";
-                    dataGridView1.Columns[2].HeaderText = "電話番号";
-                    dataGridView1.Columns[3].HeaderText = "住所";
-                    dataGridView1.Columns[4].HeaderText = "生年月日";
-                    dataGridView1.Columns[5].HeaderText = "パスワード";
+                    dataGridView1.Columns[_Number].HeaderText = "番号";
+                    dataGridView1.Columns[_Name].HeaderText = "氏名";
+                    dataGridView1.Columns[_PhoneNumber].HeaderText = "電話番号";
+                    dataGridView1.Columns[_Address].HeaderText = "住所";
+                    dataGridView1.Columns[_Birth].HeaderText = "生年月日";
+                    dataGridView1.Columns[_Pass].HeaderText = "パスワード";
                 }
 
-                con.Close();
+                Searcon.Close();
             }
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Back_Button_Click(object sender, EventArgs e)
         {
             //Form2を取得
-            Menu form2 = new Menu();
+            Menu Menu = new Menu();
             //Form2を表示
-            form2.Show();
+            Menu.Show();
             //Form5を非表示
             this.Visible = false;
         }

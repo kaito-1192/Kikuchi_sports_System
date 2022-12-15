@@ -32,18 +32,20 @@ namespace Kikushi_sports_System
             SQLiteCommand cmd = LogCon.CreateCommand();
 
             //Menu画面情報を取得
-            Menu form2 = new Menu();
+            Menu Menu = new Menu();
 
             // DataTableを生成
             DataTable dataTable = new DataTable();
 
             //SQL生成(名前と番号を基にデータを検索)
             cmd.CommandText = "SELECT CD,m_name ,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE m_name =@Name AND m_pass =@M_pass";
-            //名前検索のパラメータセット
+            //名前のパラメータ定義
             cmd.Parameters.Add("Name",DbType.String);
+            //名前のパラメータ
             cmd.Parameters["Name"].Value = textBox1.Text;
-            //パスワード検索のパラメータセット
+            //パスワードのパラメータ定義
             cmd.Parameters.Add("M_pass",DbType.String);
+            //名前のパラメータ
             cmd.Parameters["M_pass"].Value = textBox2.Text;
 
             //datatableを初期化
@@ -51,7 +53,7 @@ namespace Kikushi_sports_System
             //datatableにSQLの結果を格納
             dataTable.Load(cmd.ExecuteReader());
 
-            //dataTableに1行も見つからなかったときエラーメッセージ表示
+            //detaTableに結果がないとき(行が0のとき)エラーメッセージを表示
             if (dataTable.Rows.Count == 0)
             {
                 //会員番号　or　パスワードが違う
@@ -62,7 +64,7 @@ namespace Kikushi_sports_System
                 //入力した名前を変数に格納
                 _name = textBox1.Text;
                 //会員メニュー画面を表示
-                form2.Show();
+                Menu.Show();
                 //ログイン画面を非表示
                 this.Visible = false;
             }
@@ -75,9 +77,9 @@ namespace Kikushi_sports_System
         private void Register_Click(object sender, EventArgs e)
         {
             //登録画面情報取得
-            Register form3 = new Register();
+            Register Register = new Register();
             //登録画面表示
-            form3.Show();
+            Register.Show();
             //ログイン画面を非表示
             this.Visible = false;
         }
@@ -97,6 +99,7 @@ namespace Kikushi_sports_System
                     "create table if not exists t_product (CD INTEGER PRIMARY KEY AUTOINCREMENT,m_name TEXT,m_phonenumber TEXT,m_address TEXT,m_birth TEXT,m_pass TEXT)";
                 command.ExecuteNonQuery();
             }
+            //DB接続解除
             LogCon.Close();
             //テキストボックスののぞき見防止(テキストを＊で表示)
             textBox2.PasswordChar = '*';
