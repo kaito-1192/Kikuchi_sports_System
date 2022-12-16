@@ -15,21 +15,22 @@ namespace Kikushi_sports_System
         }
 
         /// <summary>
-        /// 画面を開いたとき、すべての項目の編集をできなくする
+        /// 画面を開いたとき、すべての項目の編集をできなくする　＆
+        /// パスワードの伏字処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void RegiCheck_Load(object sender, EventArgs e)
         {
             //内容確認のテキストを編集できないようにする
-            textBox1.ReadOnly = true;
-            textBox2.ReadOnly = true;
-            textBox3.ReadOnly = true;
-            textBox4.ReadOnly = true;
-            textBox5.ReadOnly = true;
+            nameText.ReadOnly = true;
+            phoneText.ReadOnly = true;
+            addressText.ReadOnly = true;
+            birthText.ReadOnly = true;
+            passText.ReadOnly = true;
 
             //テキストボックスののぞき見防止(テキストを＊で表示)
-            textBox5.PasswordChar = '*';
+            passText.PasswordChar = '*';
         }
 
         /// <summary>
@@ -74,15 +75,15 @@ namespace Kikushi_sports_System
                     //パスワードのパラメータ定義
                     cmd.Parameters.Add("m_pass",DbType.String);
                     //名前のパラメータ
-                    cmd.Parameters["m_name"].Value = textBox1.Text;
+                    cmd.Parameters["m_name"].Value = nameText.Text;
                     //電話番号のパラメータ
-                    cmd.Parameters["m_phonenumber"].Value = textBox2.Text;
+                    cmd.Parameters["m_phonenumber"].Value = phoneText.Text;
                     //住所のパラメータ
-                    cmd.Parameters["m_address"].Value = textBox3.Text;
+                    cmd.Parameters["m_address"].Value = addressText.Text;
                     //生年月日のパラメータ
-                    cmd.Parameters["m_birth"].Value = textBox4.Text;
+                    cmd.Parameters["m_birth"].Value = birthText.Text;
                     //パスワードのパラメータ
-                    cmd.Parameters["m_pass"].Value = textBox5.Text;
+                    cmd.Parameters["m_pass"].Value = passText.Text;
                     cmd.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
@@ -109,13 +110,13 @@ namespace Kikushi_sports_System
             if (!_isOpen)
             {
                 //目を押したとき、テキスト表示
-                textBox5.PasswordChar = default;
+                passText.PasswordChar = default;
                 _isOpen = true;
             }
             else if (_isOpen)
             {
                 //もう一度押したとき、テキスト非表示
-                textBox5.PasswordChar = '*';
+                passText.PasswordChar = '*';
                 _isOpen = false;
             }
         }

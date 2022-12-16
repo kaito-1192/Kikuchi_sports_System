@@ -18,10 +18,16 @@ namespace Kikushi_sports_System
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// テキストボックス＆グリッドビューの編集できないようにする
+        /// グリッドビューのヘッダー設定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Edit_Load(object sender, EventArgs e)
         {
             //会員番号の項目を編集できないようにする
-            textBox6.ReadOnly = true;
+            numberText.ReadOnly = true;
 
             //グリッドビューを編集をできなくする
             dataGridView1.ReadOnly = true;
@@ -50,18 +56,18 @@ namespace Kikushi_sports_System
             //データ修正の確認
             DialogResult result = MessageBox.Show("データを修正しますか？",
                 "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
             //YESの場合
             if (result == DialogResult.Yes)
             {
-                using (SQLiteConnection conEdi = new SQLiteConnection("Data Source=m_table.db"))
+                using (SQLiteConnection Edicon = new SQLiteConnection("Data Source=m_table.db"))
                 {
-                    conEdi.Open();
-                    using (SQLiteTransaction trans = conEdi.BeginTransaction())
+                    //DB接続
+                    Edicon.Open();
+                    using (SQLiteTransaction trans = Edicon.BeginTransaction())
                     {
-                        SQLiteCommand cmd = conEdi.CreateCommand();
+                        SQLiteCommand cmd = Edicon.CreateCommand();
                         //パスワードが4文字以下かつ各項目に空白があれば修正しない
-                        if (textBox5.Text.Length > 3 && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
+                        if (passText.Text.Length > 3 && nameText.Text != "" && phoneText.Text != "" && addressText.Text != "" && birthText.Text != "" && passText.Text != "")
                         {
                             cmd.CommandText =
                                 "UPDATE t_product set m_name = @M_name, m_phonenumber = @M_phonenumber, m_address = @M_address, m_birth = @M_birth, m_pass = @M_pass WHERE CD = @Cd ;";
@@ -78,17 +84,17 @@ namespace Kikushi_sports_System
                             //会員番号のパラメータ定義
                             cmd.Parameters.Add("Cd",DbType.String);
                             // 名前のパラメータ
-                            cmd.Parameters["M_name"].Value = textBox1.Text;
+                            cmd.Parameters["M_name"].Value = nameText.Text;
                             //電話番号のパラメータ
-                            cmd.Parameters["M_phonenumber"].Value = textBox2.Text;
+                            cmd.Parameters["M_phonenumber"].Value = phoneText.Text;
                             //住所のパラメータ
-                            cmd.Parameters["M_address"].Value = textBox3.Text;
+                            cmd.Parameters["M_address"].Value = addressText.Text;
                             //生年月日のパラメータ
-                            cmd.Parameters["M_birth"].Value = textBox4.Text;
+                            cmd.Parameters["M_birth"].Value = birthText.Text;
                             //パスワードのパラメータ
-                            cmd.Parameters["M_pass"].Value = textBox5.Text;
+                            cmd.Parameters["M_pass"].Value = passText.Text;
                             //会員番号のパラメータ
-                            cmd.Parameters["Cd"].Value = textBox6.Text;
+                            cmd.Parameters["Cd"].Value = numberText.Text;
 
                             cmd.ExecuteNonQuery();
                             // コミット
@@ -102,7 +108,9 @@ namespace Kikushi_sports_System
                             Menu.Show();
                             //修正画面を非表示
                             this.Visible = false;
+                            Edicon.Close();
                         }
+                        //NOの場合
                         else
                         {
                             MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -111,7 +119,11 @@ namespace Kikushi_sports_System
                 }
             }
         }
-
+        /// <summary>
+        /// 会員メニュー画面に戻る処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_Button_Click(object sender, EventArgs e)
         {
             //会員メニュー情報を取得

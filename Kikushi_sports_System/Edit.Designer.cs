@@ -35,14 +35,14 @@ namespace Kikushi_sports_System
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.nameText = new System.Windows.Forms.TextBox();
+            this.phoneText = new System.Windows.Forms.TextBox();
+            this.addressText = new System.Windows.Forms.TextBox();
+            this.birthText = new System.Windows.Forms.TextBox();
+            this.passText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.numberText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -110,40 +110,40 @@ namespace Kikushi_sports_System
             this.label5.TabIndex = 5;
             this.label5.Text = "パスワード";
             // 
-            // textBox1
+            // nameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 290);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 6;
+            this.nameText.Location = new System.Drawing.Point(51, 290);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(125, 27);
+            this.nameText.TabIndex = 6;
             // 
-            // textBox2
+            // phoneText
             // 
-            this.textBox2.Location = new System.Drawing.Point(231, 290);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 7;
+            this.phoneText.Location = new System.Drawing.Point(231, 290);
+            this.phoneText.Name = "phoneText";
+            this.phoneText.Size = new System.Drawing.Size(125, 27);
+            this.phoneText.TabIndex = 7;
             // 
-            // textBox3
+            // addressText
             // 
-            this.textBox3.Location = new System.Drawing.Point(51, 380);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 8;
+            this.addressText.Location = new System.Drawing.Point(51, 380);
+            this.addressText.Name = "addressText";
+            this.addressText.Size = new System.Drawing.Size(125, 27);
+            this.addressText.TabIndex = 8;
             // 
-            // textBox4
+            // birthText
             // 
-            this.textBox4.Location = new System.Drawing.Point(231, 380);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 9;
+            this.birthText.Location = new System.Drawing.Point(231, 380);
+            this.birthText.Name = "birthText";
+            this.birthText.Size = new System.Drawing.Size(125, 27);
+            this.birthText.TabIndex = 9;
             // 
-            // textBox5
+            // passText
             // 
-            this.textBox5.Location = new System.Drawing.Point(466, 288);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 10;
+            this.passText.Location = new System.Drawing.Point(466, 288);
+            this.passText.Name = "passText";
+            this.passText.Size = new System.Drawing.Size(125, 27);
+            this.passText.TabIndex = 10;
             // 
             // button1
             // 
@@ -164,12 +164,12 @@ namespace Kikushi_sports_System
             this.label6.TabIndex = 12;
             this.label6.Text = "番号";
             // 
-            // textBox6
+            // numberText
             // 
-            this.textBox6.Location = new System.Drawing.Point(687, 52);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(94, 27);
-            this.textBox6.TabIndex = 13;
+            this.numberText.Location = new System.Drawing.Point(687, 52);
+            this.numberText.Name = "numberText";
+            this.numberText.Size = new System.Drawing.Size(94, 27);
+            this.numberText.TabIndex = 13;
             // 
             // label7
             // 
@@ -208,7 +208,7 @@ namespace Kikushi_sports_System
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Back_Button_Click);
             // 
-            // Form7
+            // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,21 +217,21 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.numberText);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.passText);
+            this.Controls.Add(this.birthText);
+            this.Controls.Add(this.addressText);
+            this.Controls.Add(this.phoneText);
+            this.Controls.Add(this.nameText);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form7";
+            this.Name = "Edit";
             this.Text = "修正";
             this.Load += new System.EventHandler(this.Edit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -248,14 +248,14 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox nameText;
+        private System.Windows.Forms.TextBox phoneText;
+        private System.Windows.Forms.TextBox addressText;
+        private System.Windows.Forms.TextBox birthText;
+        private System.Windows.Forms.TextBox passText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox numberText;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

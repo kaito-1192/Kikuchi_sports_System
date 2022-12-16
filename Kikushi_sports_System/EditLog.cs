@@ -13,11 +13,15 @@ namespace Kikushi_sports_System
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// パスワードの伏字処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditLog_Load(object sender, EventArgs e)
         {
             //テキストボックスののぞき見防止(テキストを＊で表示)
-            textBox2.PasswordChar = '*';
+            passText.PasswordChar = '*';
         }
 
     /// <summary>
@@ -30,6 +34,7 @@ namespace Kikushi_sports_System
         {
             using (SQLiteConnection editCon = new SQLiteConnection("Data Source=m_table.db"))
             {
+                //DB接続
                 editCon.Open();
                 SQLiteCommand cmd = editCon.CreateCommand();
 
@@ -44,11 +49,11 @@ namespace Kikushi_sports_System
                 //会員番号のパラメータ定義
                 cmd.Parameters.Add("Cd",DbType.String);
                 //会員番号のパラメータ
-                cmd.Parameters["Cd"].Value = textBox1.Text;
+                cmd.Parameters["Cd"].Value = numberText.Text;
                 //パスワードのパラメータ定義
                 cmd.Parameters.Add("M_pass",DbType.String);
                 //パスワードのパラメータ
-                cmd.Parameters["M_pass"].Value = textBox2.Text;
+                cmd.Parameters["M_pass"].Value = passText.Text;
 
                 //datatableを初期化
                 dataTable.Clear();
@@ -72,11 +77,15 @@ namespace Kikushi_sports_System
                 }
               
                 //修正画面に会員番号を渡す
-                Edit.textBox6.Text = textBox1.Text;
+                Edit.numberText.Text = numberText.Text;
                 editCon.Close();
             }
         }
-
+        /// <summary>
+        /// 会員メニューに戻る処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_Button_Click(object sender, EventArgs e)
         {
             //会員メニュー情報を取得
@@ -98,13 +107,13 @@ namespace Kikushi_sports_System
             if (!_isOpen)
             {
                 //目を押したとき、テキスト表示
-                textBox2.PasswordChar = default;
+                passText.PasswordChar = default;
                 _isOpen = true;
             }
             else if (_isOpen)
             {
                 //もう一度押したとき、テキスト非表示
-                textBox2.PasswordChar = '*';
+                passText.PasswordChar = '*';
                 _isOpen = false;
             }
         }

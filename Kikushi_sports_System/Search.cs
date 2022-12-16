@@ -33,7 +33,7 @@ namespace Kikushi_sports_System
         }
 
         /// <summary>
-        /// 検索画面を押したとき入力された項目を基に情報を検索する
+        /// 検索画面を押したとき入力された番号 or パスワードを基に情報を検索する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -41,6 +41,7 @@ namespace Kikushi_sports_System
         {
             using (SQLiteConnection Searcon = new SQLiteConnection("Data Source=m_table.db"))
             {
+                //DB接続
                 Searcon.Open();
                 SQLiteCommand cmd = Searcon.CreateCommand();
 
@@ -52,16 +53,17 @@ namespace Kikushi_sports_System
                 //会員番号のパラメータ定義
                 cmd.Parameters.Add("Cd",DbType.String);
                 //会員番号のパラメータ
-                cmd.Parameters["Cd"].Value = textBox1.Text;
+                cmd.Parameters["Cd"].Value = inputText.Text;
                 //パスワードのパラメータ定義
                 cmd.Parameters.Add("M_pass",DbType.String);
                 //パスワードのパラメータ
-                cmd.Parameters["M_pass"].Value = textBox1.Text;
+                cmd.Parameters["M_pass"].Value = inputText.Text;
 
                 //dataTableの初期化
                 dataTable.Clear();
                 //SQLの結果をdataTableに格納
                 dataTable.Load(cmd.ExecuteReader());
+
                 //detaTableに結果がないとき(行が0のとき)エラーメッセージを表示
                 if (dataTable.Rows.Count == 0)
                 {
@@ -81,18 +83,23 @@ namespace Kikushi_sports_System
                     dataGridView1.Columns[_Pass].HeaderText = "パスワード";
                 }
 
+                 //DB接続解除
                 Searcon.Close();
             }
         }
 
-
+        /// <summary>
+        /// 会員メニュー画面に戻る処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_Button_Click(object sender, EventArgs e)
         {
-            //Form2を取得
+            //会員メニュー画面情報を取得
             Menu Menu = new Menu();
-            //Form2を表示
+            //会員メニュー画面を表示
             Menu.Show();
-            //Form5を非表示
+            //検索画面を非表示
             this.Visible = false;
         }
 

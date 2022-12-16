@@ -11,17 +11,17 @@ namespace Kikushi_sports_System
             InitializeComponent();
         }
         /// <summary>
-        /// テキストボックス非表示処理
+        /// パスワード伏字処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Register_Load(object sender, EventArgs e)
         {
-            //テキストボックスののぞき見防止(テキストを＊で表示)
-            textBox5.PasswordChar = '*';
+            //パスワードののぞき見防止(テキストを＊で表示)
+            passText.PasswordChar = '*';
 
-            //テキストボックスののぞき見防止(テキストを＊で表示)
-            textBox6.PasswordChar = '*';
+            //パスワードののぞき見防止(テキストを＊で表示)
+            passText2.PasswordChar = '*';
         }
         /// <summary>
         /// ログイン画面に戻る処理
@@ -52,7 +52,7 @@ namespace Kikushi_sports_System
             Regi_check Regi_Check = new Regi_check();
 
             //パスワードが4文字以上で入力項目に空白がないとき
-            if (textBox5.Text.Length > 3 &&textBox5.Text==textBox6.Text&&textBox1.Text!=""&&textBox2.Text!=""&&textBox3.Text!=""&&textBox4.Text!=""&&textBox5.Text!="")
+            if (passText.Text.Length > 3 &&passText.Text==passText2.Text&&nameText.Text!=""&&phoneText.Text!=""&&addressText.Text!=""&&birthText.Text!=""&&passText.Text!="")
             { 
             //登録内容確認画面を表示
             Regi_Check.Show();
@@ -60,11 +60,11 @@ namespace Kikushi_sports_System
             this.Visible = false;
 
                 //登録内容確認画面の内容確認のテキストに入力したテキスト内容を渡す
-                Regi_Check.textBox1.Text = textBox1.Text;
-                Regi_Check.textBox2.Text = textBox2.Text;
-                Regi_Check.textBox3.Text = textBox3.Text;
-                Regi_Check.textBox4.Text = textBox4.Text;
-                Regi_Check.textBox5.Text = textBox5.Text;
+                Regi_Check.nameText.Text = nameText.Text;
+                Regi_Check.phoneText.Text = phoneText.Text;
+                Regi_Check.addressText.Text = addressText.Text;
+                Regi_Check.birthText.Text = birthText.Text;
+                Regi_Check.passText.Text = passText.Text;
             }
             //エラーメッセージ表示
             else
@@ -85,13 +85,13 @@ namespace Kikushi_sports_System
             if (!_isOpen)
             {
                 //目を押したとき、テキスト表示
-                textBox5.PasswordChar = default;
+                passText.PasswordChar = default;
                 _isOpen = true;
             }
             else if (_isOpen)
             {
                 //もう一度押したとき、テキスト非表示
-                textBox5.PasswordChar = '*';
+                passText.PasswordChar = '*';
                 _isOpen = false;
             }
         }

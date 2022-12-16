@@ -42,11 +42,11 @@ namespace Kikushi_sports_System
             //名前のパラメータ定義
             cmd.Parameters.Add("Name",DbType.String);
             //名前のパラメータ
-            cmd.Parameters["Name"].Value = textBox1.Text;
+            cmd.Parameters["Name"].Value = nameText.Text;
             //パスワードのパラメータ定義
             cmd.Parameters.Add("M_pass",DbType.String);
             //名前のパラメータ
-            cmd.Parameters["M_pass"].Value = textBox2.Text;
+            cmd.Parameters["M_pass"].Value = passText.Text;
 
             //datatableを初期化
             dataTable.Clear();
@@ -62,7 +62,7 @@ namespace Kikushi_sports_System
             else
             {
                 //入力した名前を変数に格納
-                _name = textBox1.Text;
+                _name = nameText.Text;
                 //会員メニュー画面を表示
                 Menu.Show();
                 //ログイン画面を非表示
@@ -102,7 +102,7 @@ namespace Kikushi_sports_System
             //DB接続解除
             LogCon.Close();
             //テキストボックスののぞき見防止(テキストを＊で表示)
-            textBox2.PasswordChar = '*';
+            passText.PasswordChar = '*';
         }
 
         /// <summary>
@@ -116,14 +116,14 @@ namespace Kikushi_sports_System
             if (!_isOpen)
             {
                 //目を押したとき、テキスト表示
-                textBox2.PasswordChar = default;
+                passText.PasswordChar = default;
                 _isOpen = true;
                
             }
             else if (_isOpen)
             {
                 //もう一度押したとき、テキスト非表示
-                textBox2.PasswordChar = '*';
+                passText.PasswordChar = '*';
                 _isOpen = false;
             }
         }

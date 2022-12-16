@@ -29,19 +29,19 @@ namespace Kikushi_sports_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numberText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // numberText
             // 
-            this.textBox1.Location = new System.Drawing.Point(671, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 27);
-            this.textBox1.TabIndex = 16;
+            this.numberText.Location = new System.Drawing.Point(671, 44);
+            this.numberText.Name = "numberText";
+            this.numberText.Size = new System.Drawing.Size(94, 27);
+            this.numberText.TabIndex = 16;
             // 
             // button1
             // 
@@ -76,17 +76,17 @@ namespace Kikushi_sports_System
             this.dataGridView1.Size = new System.Drawing.Size(578, 220);
             this.dataGridView1.TabIndex = 18;
             // 
-            // Form9
+            // Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.numberText);
             this.Controls.Add(this.button1);
-            this.Name = "Form9";
-            this.Text = "Form9";
+            this.Name = "Delete";
+            this.Text = "削除";
             this.Load += new System.EventHandler(this.Delete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -96,7 +96,7 @@ namespace Kikushi_sports_System
 
         #endregion
 
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox numberText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView dataGridView1;

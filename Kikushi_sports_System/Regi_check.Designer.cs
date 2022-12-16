@@ -30,18 +30,18 @@ namespace Kikushi_sports_System
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.nameText = new System.Windows.Forms.TextBox();
+            this.phoneText = new System.Windows.Forms.TextBox();
+            this.addressText = new System.Windows.Forms.TextBox();
+            this.birthText = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.passText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.eye = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -54,33 +54,33 @@ namespace Kikushi_sports_System
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BackRegi_Click);
             // 
-            // textBox1
+            // nameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 2;
+            this.nameText.Location = new System.Drawing.Point(188, 76);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(125, 27);
+            this.nameText.TabIndex = 2;
             // 
-            // textBox2
+            // phoneText
             // 
-            this.textBox2.Location = new System.Drawing.Point(444, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 3;
+            this.phoneText.Location = new System.Drawing.Point(444, 76);
+            this.phoneText.Name = "phoneText";
+            this.phoneText.Size = new System.Drawing.Size(125, 27);
+            this.phoneText.TabIndex = 3;
             // 
-            // textBox3
+            // addressText
             // 
-            this.textBox3.Location = new System.Drawing.Point(188, 170);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 4;
+            this.addressText.Location = new System.Drawing.Point(188, 170);
+            this.addressText.Name = "addressText";
+            this.addressText.Size = new System.Drawing.Size(125, 27);
+            this.addressText.TabIndex = 4;
             // 
-            // textBox4
+            // birthText
             // 
-            this.textBox4.Location = new System.Drawing.Point(444, 162);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 5;
+            this.birthText.Location = new System.Drawing.Point(444, 162);
+            this.birthText.Name = "birthText";
+            this.birthText.Size = new System.Drawing.Size(125, 27);
+            this.birthText.TabIndex = 5;
             // 
             // button2
             // 
@@ -128,12 +128,12 @@ namespace Kikushi_sports_System
             this.label4.TabIndex = 10;
             this.label4.Text = "生年月日";
             // 
-            // textBox5
+            // passText
             // 
-            this.textBox5.Location = new System.Drawing.Point(188, 251);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 11;
+            this.passText.Location = new System.Drawing.Point(188, 251);
+            this.passText.Name = "passText";
+            this.passText.Size = new System.Drawing.Size(125, 27);
+            this.passText.TabIndex = 11;
             // 
             // label5
             // 
@@ -144,33 +144,33 @@ namespace Kikushi_sports_System
             this.label5.TabIndex = 12;
             this.label5.Text = "パスワード";
             // 
-            // label6
+            // eye
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(320, 251);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "👁";
-            this.label6.Click += new System.EventHandler(this.eyeText_Click);
+            this.eye.AutoSize = true;
+            this.eye.Location = new System.Drawing.Point(320, 251);
+            this.eye.Name = "eye";
+            this.eye.Size = new System.Drawing.Size(30, 20);
+            this.eye.TabIndex = 13;
+            this.eye.Text = "👁";
+            this.eye.Click += new System.EventHandler(this.eyeText_Click);
             // 
             // Regi_check
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.eye);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.passText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.birthText);
+            this.Controls.Add(this.addressText);
+            this.Controls.Add(this.phoneText);
+            this.Controls.Add(this.nameText);
             this.Controls.Add(this.button1);
             this.Name = "Regi_check";
             this.Text = "登録内容確認";
@@ -183,16 +183,16 @@ namespace Kikushi_sports_System
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox2;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox nameText;
+        public System.Windows.Forms.TextBox phoneText;
+        public System.Windows.Forms.TextBox addressText;
+        public System.Windows.Forms.TextBox birthText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox passText;
+        private System.Windows.Forms.Label eye;
     }
 }

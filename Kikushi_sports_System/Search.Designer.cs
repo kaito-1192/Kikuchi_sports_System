@@ -29,7 +29,7 @@ namespace Kikushi_sports_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inputText = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,12 +37,12 @@ namespace Kikushi_sports_System
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // inputText
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 27);
-            this.textBox1.TabIndex = 0;
+            this.inputText.Location = new System.Drawing.Point(62, 91);
+            this.inputText.Name = "inputText";
+            this.inputText.Size = new System.Drawing.Size(176, 27);
+            this.inputText.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -88,7 +88,7 @@ namespace Kikushi_sports_System
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Back_Button_Click);
             // 
-            // Form5
+            // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,9 +97,9 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form5";
-            this.Text = "Form5";
+            this.Controls.Add(this.inputText);
+            this.Name = "Search";
+            this.Text = "検索";
             this.Load += new System.EventHandler(this.Serach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -111,7 +111,7 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox inputText;
         private System.Windows.Forms.Button button2;
     }
 }

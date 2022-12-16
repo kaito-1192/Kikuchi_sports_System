@@ -7,6 +7,7 @@ namespace Kikushi_sports_System
 {
     public partial class Menu : Form
     {
+        public static string cd = null;
         public Menu()
         {
             InitializeComponent();
@@ -77,6 +78,7 @@ namespace Kikushi_sports_System
             //テキストボックスを編集できないようにする
             textBox1.ReadOnly = true;
 
+            
             //SQLiteのコネクション設定
             using (SQLiteConnection Menu_con = new SQLiteConnection("Data Source=m_table.db"))
             {
@@ -119,7 +121,7 @@ namespace Kikushi_sports_System
                     using (SQLiteTransaction trans = Menu_con.BeginTransaction())
                     {
                         //名前の変数
-                        string cd = null;
+                        //string cd = null;
                         SQLiteCommand cmd = Menu_con.CreateCommand();
                         cmd.CommandText = "SELECT CD FROM t_product WHERE m_name=@Name";
                         //名前のパラメータ定義
@@ -133,8 +135,6 @@ namespace Kikushi_sports_System
                         {
                             //SQLの結果を格納
                             cd = reader.GetValue(0).ToString();
-                            //会員番号を表示
-                            textBox1.Text = cd;
                         }
                     }
                 }
@@ -142,6 +142,8 @@ namespace Kikushi_sports_System
                 {
                     //DB接続解除
                     Menu_con.Close();
+                    //会員番号を表示
+                    textBox1.Text = cd;
                 }
             }
         }

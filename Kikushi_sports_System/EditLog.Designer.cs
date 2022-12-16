@@ -30,9 +30,9 @@ namespace Kikushi_sports_System
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numberText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.passText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,12 +48,12 @@ namespace Kikushi_sports_System
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Check_Button_Click);
             // 
-            // textBox1
+            // numberText
             // 
-            this.textBox1.Location = new System.Drawing.Point(318, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 2;
+            this.numberText.Location = new System.Drawing.Point(318, 104);
+            this.numberText.Name = "numberText";
+            this.numberText.Size = new System.Drawing.Size(125, 27);
+            this.numberText.TabIndex = 2;
             // 
             // label1
             // 
@@ -64,12 +64,12 @@ namespace Kikushi_sports_System
             this.label1.TabIndex = 3;
             this.label1.Text = "番号を入力";
             // 
-            // textBox2
+            // passText
             // 
-            this.textBox2.Location = new System.Drawing.Point(318, 211);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 4;
+            this.passText.Location = new System.Drawing.Point(318, 211);
+            this.passText.Name = "passText";
+            this.passText.Size = new System.Drawing.Size(125, 27);
+            this.passText.TabIndex = 4;
             // 
             // label2
             // 
@@ -108,9 +108,9 @@ namespace Kikushi_sports_System
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.passText);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.numberText);
             this.Controls.Add(this.button1);
             this.Name = "EditLog";
             this.Text = "認証";
@@ -123,9 +123,9 @@ namespace Kikushi_sports_System
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox numberText;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox passText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;

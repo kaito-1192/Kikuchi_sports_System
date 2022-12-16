@@ -18,11 +18,16 @@ namespace Kikushi_sports_System
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// テキストボックス＆グリッドビューの編集できないようにする
+        /// グリッドビューのヘッダー設定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Load(object sender, EventArgs e)
         {
             //textboxを編集できないようにする
-            textBox1.ReadOnly = true;
+            numberText.ReadOnly = true;
 
             //dataGridViewの編集をできなくする
             dataGridView1.ReadOnly = true;
@@ -50,12 +55,13 @@ namespace Kikushi_sports_System
             //データ削除の確認
             DialogResult result = MessageBox.Show("データを削除しますか？",
                 "確認",MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
+            //Yes
             if (result == DialogResult.Yes)
             {
                 //会員番号を基に削除
                 using (SQLiteConnection Delcon = new SQLiteConnection("Data Source=m_table.db"))
                 {
+                    //DB接続
                     Delcon.Open();
                     using (SQLiteTransaction trans = Delcon.BeginTransaction())
                     {
@@ -65,18 +71,20 @@ namespace Kikushi_sports_System
                         //会員番号のパラメータ定義
                         cmd.Parameters.Add("Cd",DbType.String);
                         //会員番号のパラメータ
-                        cmd.Parameters["Cd"].Value = textBox1.Text;
+                        cmd.Parameters["Cd"].Value = numberText.Text;
                         cmd.ExecuteNonQuery();
                         // コミット
                         trans.Commit();
+
+                      
                     }
                 }
 
                 //ログイン画面情報を取得
-                Login form1 = new Login();
+                Login Login = new Login();
                 //ログイン画面を表示
-                form1.Show();
-                //削除を非表示
+                Login.Show();
+                //削除画を非表示
                 this.Visible = false;
             }
         }
@@ -84,9 +92,9 @@ namespace Kikushi_sports_System
         private void Back_Button_Click(object sender, EventArgs e)
         {
             //会員メニュー画面情報を取得
-            Menu form2 = new Menu();
+            Menu Menu = new Menu();
             //会員メニュー画面を表示
-            form2.Show();
+            Menu.Show();
             //削除画面を非表示
             this.Visible = false;
         }
