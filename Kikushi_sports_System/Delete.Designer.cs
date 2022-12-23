@@ -33,19 +33,20 @@ namespace Kikushi_sports_System
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // numberText
             // 
-            this.numberText.Location = new System.Drawing.Point(671, 44);
+            this.numberText.Location = new System.Drawing.Point(27, 256);
             this.numberText.Name = "numberText";
             this.numberText.Size = new System.Drawing.Size(94, 27);
             this.numberText.TabIndex = 16;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(248, 303);
+            this.button1.Location = new System.Drawing.Point(246, 325);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 56);
             this.button1.TabIndex = 15;
@@ -68,19 +69,29 @@ namespace Kikushi_sports_System
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(578, 220);
+            this.dataGridView1.Size = new System.Drawing.Size(746, 198);
             this.dataGridView1.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "番号";
             // 
             // Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.numberText);
@@ -100,5 +111,6 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }

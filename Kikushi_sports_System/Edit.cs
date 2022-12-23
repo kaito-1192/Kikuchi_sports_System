@@ -133,5 +133,93 @@ namespace Kikushi_sports_System
             //修正画面を非表示
             this.Visible = false;
         }
+        /// <summary>
+        /// 氏名項目の制約
+        /// Backスペースは有効
+        /// 数値は入力させない
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void nameText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //バックスペースが押された時は有効（Deleteキーも有効）
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+            //数値0～9以外が押された時はイベントをキャンセルする
+            if ((e.KeyChar < '0' || '9' < e.KeyChar))
+            {
+                return;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        /// <summary>
+        ///  電話番号項目の制約
+        ///  Backスペースは有効
+        ///  文字は入力させない
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void phoneText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //バックスペースが押された時は有効（Deleteキーも有効）
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+            //数値0～9以外が押された時はイベントをキャンセルする
+            if ((e.KeyChar < '0' || '9' < e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        /// <summary>
+        /// 生年月日項目の制約
+        ///  Backスペースは有効
+        ///  文字は入力させない
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void birthText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //バックスペースが押された時は有効（Deleteキーも有効）
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+            //数値0～9以外が押された時はイベントをキャンセルする
+            if ((e.KeyChar < '0' || '9' < e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        /// <summary>
+        /// パスワード項目項目の制約
+        /// Backスペースは有効
+        /// 数値は入力させない
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void passText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //バックスペースが押された時は有効（Deleteキーも有効）
+            if (e.KeyChar == '\b')
+            {
+                return;
+            }
+            //数値0～9以外が押された時はイベントをキャンセルする
+            if ((e.KeyChar < '0' || '9' < e.KeyChar))
+            {
+                return;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -67,6 +67,7 @@ namespace Kikushi_sports_System
             // 
             // passText
             // 
+            this.passText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.passText.Location = new System.Drawing.Point(308, 179);
             this.passText.Name = "passText";
             this.passText.Size = new System.Drawing.Size(125, 27);

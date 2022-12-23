@@ -67,7 +67,9 @@ namespace Kikushi_sports_System
                 Menu.Show();
                 //ログイン画面を非表示
                 this.Visible = false;
+                
             }
+            LogCon.Close();
         }
         /// <summary>
         /// まだ登録していない場合、登録画面に遷移

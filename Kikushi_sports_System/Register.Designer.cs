@@ -40,14 +40,14 @@ namespace Kikushi_sports_System
             this.birthText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.passText = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.passText2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -61,10 +61,13 @@ namespace Kikushi_sports_System
             // 
             // nameText
             // 
+            this.nameText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.nameText.Location = new System.Drawing.Point(119, 62);
             this.nameText.Name = "nameText";
+            this.nameText.ShortcutsEnabled = false;
             this.nameText.Size = new System.Drawing.Size(125, 27);
             this.nameText.TabIndex = 1;
+            this.nameText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameText_KeyPress);
             // 
             // label2
             // 
@@ -76,10 +79,13 @@ namespace Kikushi_sports_System
             // 
             // phoneText
             // 
+            this.phoneText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.phoneText.Location = new System.Drawing.Point(424, 62);
             this.phoneText.Name = "phoneText";
+            this.phoneText.ShortcutsEnabled = false;
             this.phoneText.Size = new System.Drawing.Size(140, 27);
             this.phoneText.TabIndex = 3;
+            this.phoneText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneText_KeyPress);
             // 
             // label3
             // 
@@ -110,17 +116,22 @@ namespace Kikushi_sports_System
             // 
             // addressText
             // 
+            this.addressText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.addressText.Location = new System.Drawing.Point(119, 150);
             this.addressText.Name = "addressText";
+            this.addressText.ShortcutsEnabled = false;
             this.addressText.Size = new System.Drawing.Size(125, 27);
             this.addressText.TabIndex = 7;
             // 
             // birthText
             // 
+            this.birthText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.birthText.Location = new System.Drawing.Point(424, 150);
             this.birthText.Name = "birthText";
+            this.birthText.ShortcutsEnabled = false;
             this.birthText.Size = new System.Drawing.Size(140, 27);
             this.birthText.TabIndex = 8;
+            this.birthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.birthText_KeyPress);
             // 
             // button1
             // 
@@ -142,24 +153,6 @@ namespace Kikushi_sports_System
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Check_button_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(521, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "例　000-0000-0000";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(521, 127);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "例　YYYY-MM-DD";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -171,10 +164,13 @@ namespace Kikushi_sports_System
             // 
             // passText
             // 
+            this.passText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.passText.Location = new System.Drawing.Point(119, 243);
             this.passText.Name = "passText";
+            this.passText.ShortcutsEnabled = false;
             this.passText.Size = new System.Drawing.Size(125, 27);
             this.passText.TabIndex = 14;
+            this.passText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passText_KeyPress);
             // 
             // label9
             // 
@@ -197,10 +193,13 @@ namespace Kikushi_sports_System
             // 
             // passText2
             // 
+            this.passText2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.passText2.Location = new System.Drawing.Point(424, 239);
             this.passText2.Name = "passText2";
+            this.passText2.ShortcutsEnabled = false;
             this.passText2.Size = new System.Drawing.Size(125, 27);
             this.passText2.TabIndex = 17;
+            this.passText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passText2_KeyPress);
             // 
             // label11
             // 
@@ -211,19 +210,37 @@ namespace Kikushi_sports_System
             this.label11.TabIndex = 18;
             this.label11.Text = "パスワード(再入力)";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(514, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 20);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "※空白・ハイフンなし";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(514, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(129, 20);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "※空白・ハイフンなし";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.passText2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.passText);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.birthText);
@@ -256,13 +273,13 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.TextBox birthText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox passText;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox passText2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

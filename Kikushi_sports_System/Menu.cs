@@ -7,6 +7,7 @@ namespace Kikushi_sports_System
 {
     public partial class Menu : Form
     {
+        //番号の変数
         public static string cd = null;
         public Menu()
         {
@@ -120,8 +121,7 @@ namespace Kikushi_sports_System
                     Menu_con.Open();
                     using (SQLiteTransaction trans = Menu_con.BeginTransaction())
                     {
-                        //名前の変数
-                        //string cd = null;
+                       
                         SQLiteCommand cmd = Menu_con.CreateCommand();
                         cmd.CommandText = "SELECT CD FROM t_product WHERE m_name=@Name";
                         //名前のパラメータ定義

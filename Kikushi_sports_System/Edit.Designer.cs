@@ -57,12 +57,12 @@ namespace Kikushi_sports_System
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(51, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(577, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(774, 159);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -77,7 +77,7 @@ namespace Kikushi_sports_System
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 265);
+            this.label2.Location = new System.Drawing.Point(257, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace Kikushi_sports_System
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 351);
+            this.label3.Location = new System.Drawing.Point(51, 354);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 3;
@@ -95,7 +95,7 @@ namespace Kikushi_sports_System
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(231, 357);
+            this.label4.Location = new System.Drawing.Point(257, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 4;
@@ -104,7 +104,7 @@ namespace Kikushi_sports_System
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(466, 265);
+            this.label5.Location = new System.Drawing.Point(478, 354);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 5;
@@ -114,40 +114,51 @@ namespace Kikushi_sports_System
             // 
             this.nameText.Location = new System.Drawing.Point(51, 290);
             this.nameText.Name = "nameText";
+            this.nameText.ShortcutsEnabled = false;
             this.nameText.Size = new System.Drawing.Size(125, 27);
             this.nameText.TabIndex = 6;
+            this.nameText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameText_KeyPress);
             // 
             // phoneText
             // 
-            this.phoneText.Location = new System.Drawing.Point(231, 290);
+            this.phoneText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.phoneText.Location = new System.Drawing.Point(257, 290);
             this.phoneText.Name = "phoneText";
+            this.phoneText.ShortcutsEnabled = false;
             this.phoneText.Size = new System.Drawing.Size(125, 27);
             this.phoneText.TabIndex = 7;
+            this.phoneText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneText_KeyPress);
             // 
             // addressText
             // 
-            this.addressText.Location = new System.Drawing.Point(51, 380);
+            this.addressText.Location = new System.Drawing.Point(51, 379);
             this.addressText.Name = "addressText";
+            this.addressText.ShortcutsEnabled = false;
             this.addressText.Size = new System.Drawing.Size(125, 27);
             this.addressText.TabIndex = 8;
             // 
             // birthText
             // 
-            this.birthText.Location = new System.Drawing.Point(231, 380);
+            this.birthText.Location = new System.Drawing.Point(257, 377);
             this.birthText.Name = "birthText";
+            this.birthText.ShortcutsEnabled = false;
             this.birthText.Size = new System.Drawing.Size(125, 27);
             this.birthText.TabIndex = 9;
+            this.birthText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.birthText_KeyPress);
             // 
             // passText
             // 
-            this.passText.Location = new System.Drawing.Point(466, 288);
+            this.passText.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.passText.Location = new System.Drawing.Point(478, 377);
             this.passText.Name = "passText";
+            this.passText.ShortcutsEnabled = false;
             this.passText.Size = new System.Drawing.Size(125, 27);
             this.passText.TabIndex = 10;
+            this.passText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passText_KeyPress);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(466, 357);
+            this.button1.Location = new System.Drawing.Point(656, 316);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 58);
             this.button1.TabIndex = 11;
@@ -158,7 +169,7 @@ namespace Kikushi_sports_System
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(710, 29);
+            this.label6.Location = new System.Drawing.Point(51, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 20);
             this.label6.TabIndex = 12;
@@ -166,7 +177,7 @@ namespace Kikushi_sports_System
             // 
             // numberText
             // 
-            this.numberText.Location = new System.Drawing.Point(687, 52);
+            this.numberText.Location = new System.Drawing.Point(51, 213);
             this.numberText.Name = "numberText";
             this.numberText.Size = new System.Drawing.Size(94, 27);
             this.numberText.TabIndex = 13;
@@ -174,25 +185,25 @@ namespace Kikushi_sports_System
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(306, 265);
+            this.label7.Location = new System.Drawing.Point(332, 265);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 20);
+            this.label7.Size = new System.Drawing.Size(129, 20);
             this.label7.TabIndex = 14;
-            this.label7.Text = "例　000-0000-0000";
+            this.label7.Text = "※空白・ハイフンなし";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(306, 357);
+            this.label8.Location = new System.Drawing.Point(332, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 20);
             this.label8.TabIndex = 15;
-            this.label8.Text = "例　YYYY-MM-DD";
+            this.label8.Text = "※空白・ハイフンなし";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(536, 265);
+            this.label9.Location = new System.Drawing.Point(548, 354);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 16;
@@ -200,9 +211,9 @@ namespace Kikushi_sports_System
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(655, 357);
+            this.button2.Location = new System.Drawing.Point(655, 393);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 58);
+            this.button2.Size = new System.Drawing.Size(116, 45);
             this.button2.TabIndex = 17;
             this.button2.Text = "メニューに戻る";
             this.button2.UseVisualStyleBackColor = true;
