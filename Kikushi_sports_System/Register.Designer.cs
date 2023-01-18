@@ -48,6 +48,7 @@ namespace Kikushi_sports_System
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -228,11 +229,21 @@ namespace Kikushi_sports_System
             this.label7.TabIndex = 20;
             this.label7.Text = "※空白・ハイフンなし";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(440, 180);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 20);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "例 19900101";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label11);
@@ -281,5 +292,6 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label12;
     }
 }

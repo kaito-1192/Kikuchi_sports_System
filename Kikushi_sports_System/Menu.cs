@@ -83,36 +83,7 @@ namespace Kikushi_sports_System
             //SQLiteのコネクション設定
             using (SQLiteConnection Menu_con = new SQLiteConnection("Data Source=m_table.db"))
             {
-                
-                //try
-                //{
-                //    con.Open();
-                //    using (SQLiteTransaction trans = con.BeginTransaction())
-                //    {
-                //        //string型の会員番号表示変数
-                //        string cd = null;
-                //        SQLiteCommand cmd = con.CreateCommand();
-
-                //        //CD(会員番号)カラムの中で最大の数値を参照
-                //        cmd.CommandText = "SELECT MAX(CD) FROM t_product";
-                //        //readerにSQLの結果を格納
-                //        SQLiteDataReader reader = cmd.ExecuteReader();
-
-                //        //データがある時
-                //        while (reader.Read())
-                //        {
-                //            //cdに値を格納
-                //            cd = reader.GetValue(0).ToString();
-                //            //テキストボックスに表示
-                //            textBox1.Text = cd;
-                //        }
-
-                //    }
-                //}
-                //finally
-                //{
-                //    con.Close();
-                //}
+               
                 try
                 {
                     //ログイン画面情報を取得
@@ -146,6 +117,20 @@ namespace Kikushi_sports_System
                     textBox1.Text = cd;
                 }
             }
+        }
+        /// <summary>
+        /// 予約画面に遷移する処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Reserve_button_Click(object sender, EventArgs e)
+        {
+            //予約メニュー画面情報を取得
+            Reserve_menu ResMenu = new Reserve_menu();
+            //予約メニュー画面を表示
+            ResMenu.Show();
+            //会員メニュー画面を非表示
+            this.Visible = false;
         }
     }
 }

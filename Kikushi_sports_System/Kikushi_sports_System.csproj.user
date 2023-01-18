@@ -16,6 +16,18 @@
     <Compile Update="Regi_check.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Reserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reserve_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reserve_management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reserve_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Search.cs">
       <SubType>Form</SubType>
     </Compile>
