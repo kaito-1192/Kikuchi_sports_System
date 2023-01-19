@@ -44,7 +44,7 @@ namespace Kikushi_sports_System
                     cmd.Parameters.Add("time", DbType.String);
 
                     cmd.Parameters["CD"].Value = number_text.Text;
-                    cmd.Parameters["r_name"].Value = number_text.Text;
+                    cmd.Parameters["r_name"].Value = name_text.Text;
                     cmd.Parameters["service"].Value = service_text.Text;
                     cmd.Parameters["date"].Value = date_text.Text;
                     cmd.Parameters["time"].Value = time_text.Text;    

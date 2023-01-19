@@ -69,12 +69,13 @@ namespace Kikushi_sports_System
             // 
             // service_down
             // 
+            this.service_down.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.service_down.FormattingEnabled = true;
             this.service_down.Items.AddRange(new object[] {
             "ジム",
             "プール",
             "温泉",
-            "球技"});
+            "体育館"});
             this.service_down.Location = new System.Drawing.Point(86, 184);
             this.service_down.Name = "service_down";
             this.service_down.Size = new System.Drawing.Size(125, 28);
@@ -100,16 +101,25 @@ namespace Kikushi_sports_System
             // 
             // time_down
             // 
+            this.time_down.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.time_down.FormattingEnabled = true;
             this.time_down.Items.AddRange(new object[] {
             "10時00分",
+            "10時30分",
             "11時00分",
+            "11時30分",
             "12時00分",
+            "12時30分",
             "13時00分",
+            "13時30分",
             "14時00分",
+            "14時30分",
             "15時00分",
+            "15時30分",
             "16時00分",
+            "16時30分",
             "17時00分",
+            "17時30分",
             "18時00分"});
             this.time_down.Location = new System.Drawing.Point(84, 297);
             this.time_down.Name = "time_down";
