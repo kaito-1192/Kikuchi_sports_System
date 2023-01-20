@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class DeleteLog
     {
         /// <summary>
@@ -131,4 +129,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
     }
-}

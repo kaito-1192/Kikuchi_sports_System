@@ -3,8 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Kikushi_sports_System
-{
     public partial class DeleteLog : Form
     {
         //のぞき見防止のbool変数
@@ -116,4 +114,3 @@ namespace Kikushi_sports_System
             }
         }
     }
-}

@@ -3,8 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Kikushi_sports_System
-{
     public partial class Delete : Form
     {
         //グリッドビューの列指定番号
@@ -99,4 +97,4 @@ namespace Kikushi_sports_System
             this.Visible = false;
         }
     }
-}
+

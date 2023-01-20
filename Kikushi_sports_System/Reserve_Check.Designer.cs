@@ -1,6 +1,5 @@
 ﻿
-namespace Kikushi_sports_System
-{
+
     partial class Reserve_Check
     {
         /// <summary>
@@ -169,4 +168,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox name_text;
     }
-}

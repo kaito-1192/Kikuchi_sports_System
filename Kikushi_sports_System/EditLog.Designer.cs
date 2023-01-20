@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class EditLog
     {
         /// <summary>
@@ -130,4 +128,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
     }
-}

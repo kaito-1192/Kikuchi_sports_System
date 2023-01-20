@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Menu
     {
         /// <summary>
@@ -135,4 +133,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
     }
-}

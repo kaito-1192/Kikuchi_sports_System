@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Reserve_menu
     {
         /// <summary>
@@ -85,4 +83,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Button Reserve_management_button;
         private System.Windows.Forms.Button back_Button;
     }
-}

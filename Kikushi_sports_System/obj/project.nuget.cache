@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XFPjfiLG4T1Gm0wfTiZ5bFJwwin6hDH/BDjBSXd5HnMngT5mQRhoGQUMf/fEvNUX+5KHYXrDGS1mMgWC0t0n+w==",
+  "dgSpecHash": "k1rNYApSdKuanTMm65eZaEKHT2K8jyzVCNsCV6fb5/yDNPiX7lp/tzAUFT/yxQLKO6B/xJQVzplqpgZ3FlpGyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\s20217043\\Desktop\\Kikushi_sports_System\\Kikushi_sports_System\\Kikushi_sports_System.csproj",
+  "projectFilePath": "C:\\Users\\s20217043\\Desktop\\Kikushi_sports_System\\Kikushi_sports_System\\KikushiSportsSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\s20217043\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\s20217043\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Reserve
     {
         /// <summary>
@@ -137,9 +135,9 @@ namespace Kikushi_sports_System
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(227, 372);
+            this.button1.Location = new System.Drawing.Point(211, 378);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 41);
+            this.button1.Size = new System.Drawing.Size(134, 57);
             this.button1.TabIndex = 10;
             this.button1.Text = "予約内容確認";
             this.button1.UseVisualStyleBackColor = true;
@@ -213,4 +211,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.TextBox nameText;
         private System.Windows.Forms.Button Back_button;
     }
-}

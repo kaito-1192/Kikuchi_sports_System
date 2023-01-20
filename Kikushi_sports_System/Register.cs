@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-namespace Kikushi_sports_System
-{
+
     public partial class Register : Form
     {
         //のぞき見防止のbool変数
@@ -210,4 +209,3 @@ namespace Kikushi_sports_System
 
       
     }
-}

@@ -3,8 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Kikushi_sports_System
-{
     public partial class Search : Form
     {
         //グリッドビューの列指定番号
@@ -49,11 +47,15 @@ namespace Kikushi_sports_System
                 DataTable dataTable = new DataTable();
 
                 //SQL生成(名前または番号を基にデータを検索)
-                cmd.CommandText = "SELECT CD,m_name,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE m_pass =@M_pass OR CD =@Cd";
+                cmd.CommandText = "SELECT CD,m_name,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE CD=@cdd AND  m_pass = @M_pass OR CD =@Cd ";
                 //会員番号のパラメータ定義
                 cmd.Parameters.Add("Cd",DbType.String);
                 //会員番号のパラメータ
                 cmd.Parameters["Cd"].Value = inputText.Text;
+                //認証用会員番号のパラメータ定義
+                cmd.Parameters.Add("Cdd", DbType.String);
+                //認証用会員番号のパラメータ
+                cmd.Parameters["Cdd"].Value = Menu.cd;
                 //パスワードのパラメータ定義
                 cmd.Parameters.Add("M_pass",DbType.String);
                 //パスワードのパラメータ
@@ -67,7 +69,8 @@ namespace Kikushi_sports_System
                 //detaTableに結果がないとき(行が0のとき)エラーメッセージを表示
                 if (dataTable.Rows.Count == 0)
                 {
-                    MessageBox.Show("検索結果がありませんでした。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("検索結果がありませんでした。" +
+                        "自分の会員番号かパスワードを入力してください。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -105,4 +108,3 @@ namespace Kikushi_sports_System
 
        
     }
-}

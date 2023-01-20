@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kikushi_sports_System
-{
     static class Program
     {
         /// <summary>
@@ -20,4 +18,3 @@ namespace Kikushi_sports_System
             Application.Run(new Login());
         }
     }
-}

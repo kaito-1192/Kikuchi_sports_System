@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Edit
     {
         /// <summary>
@@ -272,4 +270,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
     }
-}

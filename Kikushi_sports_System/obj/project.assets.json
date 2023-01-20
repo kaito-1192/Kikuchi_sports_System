@@ -1162,9 +1162,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s20217043\\Desktop\\Kikushi_sports_System\\Kikushi_sports_System\\Kikushi_sports_System.csproj",
-      "projectName": "Kikushi_sports_System",
-      "projectPath": "C:\\Users\\s20217043\\Desktop\\Kikushi_sports_System\\Kikushi_sports_System\\Kikushi_sports_System.csproj",
+      "projectUniqueName": "C:\\Users\\s20217043\\Desktop\\Kikushi_sports_System\\Kikushi_sports_System\\KikushiSportsSystem.csproj",
+      "projectName": "KikushiSportsSystem",
+      "projectPath": "C:\\Users\\s20217043\\Desktop\\Kikushi_sports_System\\Kikushi_sports_System\\KikushiSportsSystem.csproj",
       "packagesPath": "C:\\Users\\s20217043\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\s20217043\\Desktop\\Kikushi_sports_System\\Kikushi_sports_System\\obj\\",
       "projectStyle": "PackageReference",

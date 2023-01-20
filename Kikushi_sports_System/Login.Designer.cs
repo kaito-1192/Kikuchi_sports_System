@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Login
     {
         /// <summary>
@@ -132,5 +130,4 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label eyeText;
     }
-}
 

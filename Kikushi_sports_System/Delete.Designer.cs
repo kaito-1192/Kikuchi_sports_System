@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Delete
     {
         /// <summary>
@@ -113,4 +111,3 @@ namespace Kikushi_sports_System
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
     }
-}

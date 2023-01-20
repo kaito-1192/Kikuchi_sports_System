@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Regi_check
     {
         /// <summary>
@@ -195,4 +193,3 @@ namespace Kikushi_sports_System
         public System.Windows.Forms.TextBox passText;
         private System.Windows.Forms.Label eye;
     }
-}

@@ -3,8 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Kikushi_sports_System
-{
     public partial class Menu : Form
     {
         //番号の変数
@@ -133,4 +131,4 @@ namespace Kikushi_sports_System
             this.Visible = false;
         }
     }
-}
+

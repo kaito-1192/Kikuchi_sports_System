@@ -3,8 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Kikushi_sports_System
-{
     public partial class Reserve_Check : Form
     {
         public Reserve_Check()
@@ -19,13 +17,22 @@ namespace Kikushi_sports_System
         /// <param name="e"></param>
         private void Reserve_Check_Load(object sender, EventArgs e)
         {
+            //会員番号のテキストボックス
             this.number_text.ReadOnly = true;
+            //利用施設のテキストボックス
             this.service_text.ReadOnly = true;
+            //日付のテキストボックス
             this.date_text.ReadOnly = true;
+            //時間のテキストボックス
             this.time_text.ReadOnly = true;
+            //名前のテキストボックス
             this.name_text.ReadOnly = true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Reserve_button_Click(object sender, EventArgs e)
         {
             SQLiteConnection ResCon = new SQLiteConnection("Data Source=Reserve_Table.db");
@@ -54,7 +61,7 @@ namespace Kikushi_sports_System
                     trans.Commit();
 
                     //登録完了メッセージ
-                    MessageBox.Show("登録が完了しました。", "完了画面");
+                    MessageBox.Show("予約が完了しました。", "完了画面");
                     //ログイン画面の情報を取得
                     Reserve_menu Res_Menu = new Reserve_menu();
                     //ログイン画面を表示
@@ -66,4 +73,3 @@ namespace Kikushi_sports_System
             }
         }
     }
-}

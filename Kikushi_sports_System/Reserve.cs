@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-namespace Kikushi_sports_System
-{
+
     public partial class Reserve : Form
     {
         public Reserve()
@@ -73,12 +72,11 @@ namespace Kikushi_sports_System
         /// <param name="e"></param>
         private void Back_button_Click(object sender, EventArgs e)
         {
-            //会員メニュー画面情報を取得
+            //予約メニュー画面情報を取得
             Reserve_menu Res_Menu = new Reserve_menu();
-            //会員メニュー画面を表示
+            //予約メニュー画面を表示
             Res_Menu.Show();
-            //検索画面を非表示
+            //予約画面を非表示
             this.Visible = false;
         }
     }
-}

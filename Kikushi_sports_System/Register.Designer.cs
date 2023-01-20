@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Register
     {
         /// <summary>
@@ -82,6 +80,7 @@ namespace Kikushi_sports_System
             // 
             this.phoneText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.phoneText.Location = new System.Drawing.Point(424, 62);
+            this.phoneText.MaxLength = 15;
             this.phoneText.Name = "phoneText";
             this.phoneText.ShortcutsEnabled = false;
             this.phoneText.Size = new System.Drawing.Size(140, 27);
@@ -128,6 +127,7 @@ namespace Kikushi_sports_System
             // 
             this.birthText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.birthText.Location = new System.Drawing.Point(424, 150);
+            this.birthText.MaxLength = 8;
             this.birthText.Name = "birthText";
             this.birthText.ShortcutsEnabled = false;
             this.birthText.Size = new System.Drawing.Size(140, 27);
@@ -136,9 +136,9 @@ namespace Kikushi_sports_System
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(671, 409);
+            this.button1.Location = new System.Drawing.Point(671, 384);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 29);
+            this.button1.Size = new System.Drawing.Size(117, 54);
             this.button1.TabIndex = 9;
             this.button1.Text = "前の画面に戻る";
             this.button1.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@ namespace Kikushi_sports_System
             // 
             this.button2.Location = new System.Drawing.Point(270, 317);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 38);
+            this.button2.Size = new System.Drawing.Size(122, 54);
             this.button2.TabIndex = 10;
             this.button2.Text = "内容確認";
             this.button2.UseVisualStyleBackColor = true;
@@ -167,6 +167,7 @@ namespace Kikushi_sports_System
             // 
             this.passText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.passText.Location = new System.Drawing.Point(119, 243);
+            this.passText.MaxLength = 8;
             this.passText.Name = "passText";
             this.passText.ShortcutsEnabled = false;
             this.passText.Size = new System.Drawing.Size(125, 27);
@@ -294,4 +295,3 @@ namespace Kikushi_sports_System
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
     }
-}

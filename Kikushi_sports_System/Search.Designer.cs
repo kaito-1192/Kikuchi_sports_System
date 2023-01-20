@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Search
     {
         /// <summary>
@@ -114,4 +112,3 @@ namespace Kikushi_sports_System
         public System.Windows.Forms.TextBox inputText;
         private System.Windows.Forms.Button button2;
     }
-}

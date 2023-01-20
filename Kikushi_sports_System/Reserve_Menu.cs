@@ -2,8 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
-namespace Kikushi_sports_System
-{
+
     public partial class Reserve_menu : Form
     {
         public Reserve_menu()
@@ -103,4 +102,3 @@ namespace Kikushi_sports_System
             }
         }
     }
-}

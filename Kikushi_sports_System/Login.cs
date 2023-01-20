@@ -3,8 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace Kikushi_sports_System
-{
     public partial class Login : Form
     { 
         //SQLiteのコネクション設定
@@ -130,4 +128,3 @@ namespace Kikushi_sports_System
             }
         }
     }
-}

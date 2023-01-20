@@ -1,6 +1,4 @@
 ﻿
-namespace Kikushi_sports_System
-{
     partial class Reserve_management
     {
         /// <summary>
@@ -31,6 +29,8 @@ namespace Kikushi_sports_System
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.back_button = new System.Windows.Forms.Button();
+            this.Delete_Button = new System.Windows.Forms.Button();
+            this.Reserve_Number_Text = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,11 +59,31 @@ namespace Kikushi_sports_System
             this.back_button.UseVisualStyleBackColor = true;
             this.back_button.Click += new System.EventHandler(this.back_button_Click);
             // 
+            // Delete_Button
+            // 
+            this.Delete_Button.Location = new System.Drawing.Point(137, 302);
+            this.Delete_Button.Name = "Delete_Button";
+            this.Delete_Button.Size = new System.Drawing.Size(104, 50);
+            this.Delete_Button.TabIndex = 4;
+            this.Delete_Button.Text = "予約の削除";
+            this.Delete_Button.UseVisualStyleBackColor = true;
+            this.Delete_Button.Click += new System.EventHandler(this.Delete_Button_Click);
+            // 
+            // Reserve_Number_Text
+            // 
+            this.Reserve_Number_Text.Location = new System.Drawing.Point(42, 302);
+            this.Reserve_Number_Text.Name = "Reserve_Number_Text";
+            this.Reserve_Number_Text.Size = new System.Drawing.Size(66, 27);
+            this.Reserve_Number_Text.TabIndex = 5;
+            this.Reserve_Number_Text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Reserve_Number_Text_KeyPress);
+            // 
             // Reserve_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Reserve_Number_Text);
+            this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Reserve_management";
@@ -71,6 +91,7 @@ namespace Kikushi_sports_System
             this.Load += new System.EventHandler(this.Reserve_management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -78,5 +99,6 @@ namespace Kikushi_sports_System
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button back_button;
+        private System.Windows.Forms.Button Delete_Button;
+        private System.Windows.Forms.TextBox Reserve_Number_Text;
     }
-}
