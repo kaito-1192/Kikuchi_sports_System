@@ -64,7 +64,7 @@ using System.Data.SQLite;
                 if (dataTable.Rows.Count==0)
                 {
                     //会員番号　or　パスワードが違う
-                    MessageBox.Show("入力された値が違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("入力エラー。入力していただいた項目にミスがあります。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -76,6 +76,7 @@ using System.Data.SQLite;
               
                 //修正画面に会員番号を渡す
                 Edit.numberText.Text = numberText.Text;
+                //DBの接続解除
                 editCon.Close();
             }
         }

@@ -92,6 +92,7 @@ using System.Data.SQLite;
                     {
                        
                         SQLiteCommand cmd = Menu_con.CreateCommand();
+                        //氏名をもとに会員番号を取得
                         cmd.CommandText = "SELECT CD FROM t_product WHERE m_name=@Name";
                         //名前のパラメータ定義
                         cmd.Parameters.Add("Name",DbType.String);

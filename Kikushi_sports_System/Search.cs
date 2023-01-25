@@ -6,11 +6,17 @@ using System.Data.SQLite;
     public partial class Search : Form
     {
         //グリッドビューの列指定番号
+        //会員番号
         const int _Number = 0;
+        //氏名
         const int _Name = 1;
+        //電話番号
         const int _PhoneNumber = 2;
+        //住所
         const int _Address = 3;
+        //生年月日
         const int _Birth = 4;
+        //パスワード
         const int _Pass = 5;
         public Search()
         {
@@ -23,12 +29,15 @@ using System.Data.SQLite;
         /// <param name="e"></param>
         private void Serach_Load(object sender, EventArgs e)
         {
-            //dataGridViewの編集をできなくする
-            dataGridView1.ReadOnly = true;
-  
-            // 行ヘッダー非表示
-            dataGridView1.RowHeadersVisible = false;
-        }
+        //dataGridViewの編集をできなくする
+        dataGridView1.ReadOnly = true;
+
+        // 行ヘッダー非表示
+        dataGridView1.RowHeadersVisible = false;
+        //データ内容の文字数に応じてセルの大きさを変える
+        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+    }
 
         /// <summary>
         /// 検索画面を押したとき入力された番号 or パスワードを基に情報を検索する
@@ -78,11 +87,17 @@ using System.Data.SQLite;
                     dataGridView1.DataSource = dataTable;
 
                     //グリッドビューの列名設定
+                    //会員番号
                     dataGridView1.Columns[_Number].HeaderText = "番号";
+                    //氏名  
                     dataGridView1.Columns[_Name].HeaderText = "氏名";
+                    //電話番号
                     dataGridView1.Columns[_PhoneNumber].HeaderText = "電話番号";
+                    //住所　
                     dataGridView1.Columns[_Address].HeaderText = "住所";
+                    //生年月日
                     dataGridView1.Columns[_Birth].HeaderText = "生年月日";
+                    //パスワード
                     dataGridView1.Columns[_Pass].HeaderText = "パスワード";
                 }
 

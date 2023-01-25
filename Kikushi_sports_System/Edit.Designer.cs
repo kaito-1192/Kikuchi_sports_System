@@ -111,6 +111,7 @@
             // nameText
             // 
             this.nameText.Location = new System.Drawing.Point(51, 290);
+            this.nameText.MaxLength = 10;
             this.nameText.Name = "nameText";
             this.nameText.ShortcutsEnabled = false;
             this.nameText.Size = new System.Drawing.Size(125, 27);
@@ -121,6 +122,7 @@
             // 
             this.phoneText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.phoneText.Location = new System.Drawing.Point(257, 290);
+            this.phoneText.MaxLength = 15;
             this.phoneText.Name = "phoneText";
             this.phoneText.ShortcutsEnabled = false;
             this.phoneText.Size = new System.Drawing.Size(125, 27);
@@ -130,6 +132,7 @@
             // addressText
             // 
             this.addressText.Location = new System.Drawing.Point(51, 379);
+            this.addressText.MaxLength = 50;
             this.addressText.Name = "addressText";
             this.addressText.ShortcutsEnabled = false;
             this.addressText.Size = new System.Drawing.Size(125, 27);
@@ -138,6 +141,7 @@
             // birthText
             // 
             this.birthText.Location = new System.Drawing.Point(257, 377);
+            this.birthText.MaxLength = 8;
             this.birthText.Name = "birthText";
             this.birthText.ShortcutsEnabled = false;
             this.birthText.Size = new System.Drawing.Size(125, 27);
@@ -148,6 +152,7 @@
             // 
             this.passText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.passText.Location = new System.Drawing.Point(478, 377);
+            this.passText.MaxLength = 8;
             this.passText.Name = "passText";
             this.passText.ShortcutsEnabled = false;
             this.passText.Size = new System.Drawing.Size(125, 27);

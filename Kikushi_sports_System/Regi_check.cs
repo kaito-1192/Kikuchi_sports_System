@@ -21,10 +21,15 @@ using System.Data.SQLite;
         private void RegiCheck_Load(object sender, EventArgs e)
         {
             //内容確認のテキストを編集できないようにする
+            //氏名
             nameText.ReadOnly = true;
+            //電話番号
             phoneText.ReadOnly = true;
+            //住所
             addressText.ReadOnly = true;
+            //生年月日
             birthText.ReadOnly = true;
+            //パスワード
             passText.ReadOnly = true;
 
             //テキストボックスののぞき見防止(テキストを＊で表示)
@@ -53,6 +58,7 @@ using System.Data.SQLite;
         /// <param name="e"></param>
         private void Reg_Button_Click(object sender, EventArgs e)
         {
+        //コネクション設定
             using (SQLiteConnection regCon = new SQLiteConnection("Data Source=m_table.db"))
             {
                 //DB接続
@@ -82,6 +88,7 @@ using System.Data.SQLite;
                     cmd.Parameters["m_birth"].Value = birthText.Text;
                     //パスワードのパラメータ
                     cmd.Parameters["m_pass"].Value = passText.Text;
+
                     cmd.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
@@ -102,7 +109,6 @@ using System.Data.SQLite;
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void eyeText_Click(object sender, EventArgs e)
         {
             if (!_isOpen)

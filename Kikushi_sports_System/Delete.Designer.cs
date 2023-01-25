@@ -44,9 +44,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 325);
+            this.button1.Location = new System.Drawing.Point(245, 351);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 56);
+            this.button1.Size = new System.Drawing.Size(117, 56);
             this.button1.TabIndex = 15;
             this.button1.Text = "削除";
             this.button1.UseVisualStyleBackColor = true;

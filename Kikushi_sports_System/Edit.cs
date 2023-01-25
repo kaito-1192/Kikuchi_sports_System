@@ -6,11 +6,17 @@ using System.Data.SQLite;
     public partial class Edit : Form
     {
         //グリッドビューの列指定番号
+        //会員番号
         const int _Number = 0;
+        //氏名
         const int _Name = 1;
+        //電話番号
         const int _PhoneNumber = 2;
+        //住所
         const int _Address = 3;
+        //生年月日
         const int _Birth = 4;
+        //パスワード
         const int _Pass = 5;
         public Edit()
         {
@@ -33,12 +39,21 @@ using System.Data.SQLite;
             // グリッドビューの行ヘッダー非表示
             dataGridView1.RowHeadersVisible = false;
 
+            //データ内容の文字数に応じてセルの大きさを変える
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
             //グリッドビューのヘッダー名を定義
+            //会員番号
             dataGridView1.Columns[_Number].HeaderText = "番号";
+            //氏名
             dataGridView1.Columns[_Name].HeaderText = "氏名";
+            //電話番号
             dataGridView1.Columns[_PhoneNumber].HeaderText = "電話番号";
+            //住所
             dataGridView1.Columns[_Address].HeaderText = "住所";
+            //生年月日
             dataGridView1.Columns[_Birth].HeaderText = "生年月日";
+            //パスワード
             dataGridView1.Columns[_Pass].HeaderText = "パスワード";
         }
 
@@ -67,6 +82,7 @@ using System.Data.SQLite;
                         //パスワードが4文字以下かつ各項目に空白があれば修正しない
                         if (passText.Text.Length > 3 && nameText.Text != "" && phoneText.Text != "" && addressText.Text != "" && birthText.Text != "" && passText.Text != "")
                         {
+                        　　//登録内容の更新
                             cmd.CommandText =
                                 "UPDATE t_product set m_name = @M_name, m_phonenumber = @M_phonenumber, m_address = @M_address, m_birth = @M_birth, m_pass = @M_pass WHERE CD = @Cd ;";
                             // 名前のパラメータ定義
@@ -111,7 +127,7 @@ using System.Data.SQLite;
                         //NOの場合
                         else
                         {
-                            MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("入力エラー。入力していただいた項目にミスがあります。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }

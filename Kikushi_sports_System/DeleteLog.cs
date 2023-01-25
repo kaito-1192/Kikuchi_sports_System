@@ -64,11 +64,13 @@ using System.Data.SQLite;
                 if (dataTable.Rows.Count == 0)
                 {
                     //会員番号　or　パスワードが違う
-                    MessageBox.Show("入力された値が違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("入力エラー。入力していただいた項目にミスがあります。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                 //削除画面を表示
                     Delete.Show();
+                 //認証画面を非表示
                     this.Visible = false;
                 }
                

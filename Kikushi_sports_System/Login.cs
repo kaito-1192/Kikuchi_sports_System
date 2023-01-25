@@ -55,7 +55,7 @@ using System.Data.SQLite;
             if (dataTable.Rows.Count == 0)
             {
                 //会員番号　or　パスワードが違う
-                MessageBox.Show("入力された値が違います。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("入力エラー。入力していただいた項目にミスがあります。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -67,6 +67,7 @@ using System.Data.SQLite;
                 this.Visible = false;
                 
             }
+            //DBの接続解除
             LogCon.Close();
         }
         /// <summary>
@@ -95,6 +96,7 @@ using System.Data.SQLite;
             LogCon.Open();
             using (SQLiteCommand command = LogCon.CreateCommand())
             {
+            //テーブル作成
                 command.CommandText =
                     "create table if not exists t_product (CD INTEGER PRIMARY KEY AUTOINCREMENT,m_name TEXT,m_phonenumber TEXT,m_address TEXT,m_birth TEXT,m_pass TEXT)";
                 command.ExecuteNonQuery();

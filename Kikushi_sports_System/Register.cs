@@ -40,7 +40,7 @@ using System.Windows.Forms;
         /// <summary>
         /// 入力項目に空値がないこと
         /// パスワードが4文字以上で入力されていること
-        /// 第一パスワードと第二パスワードがいっちしていること
+        /// 第一パスワードと第二パスワードが一致していること
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,17 +58,22 @@ using System.Windows.Forms;
             //登録画面を非表示
             this.Visible = false;
 
-                //登録内容確認画面の内容確認のテキストに入力したテキスト内容を渡す
+                //登録内容確認画面に登録画面のテキストに入力したテキスト内容を渡す
+                //氏名
                 Regi_Check.nameText.Text = nameText.Text;
+                //電話番号
                 Regi_Check.phoneText.Text = phoneText.Text;
+                //住所
                 Regi_Check.addressText.Text = addressText.Text;
+                //生年月日
                 Regi_Check.birthText.Text = birthText.Text;
+                //パスワード
                 Regi_Check.passText.Text = passText.Text;
             }
             //エラーメッセージ表示
             else
             {
-                MessageBox.Show("入力エラー", "エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("入力エラー。入力していただいた項目にミスがあります。", "エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -78,7 +83,6 @@ using System.Windows.Forms;
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void eyeText_Click(object sender, EventArgs e)
         {
             if (!_isOpen)

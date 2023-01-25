@@ -18,6 +18,8 @@ using System.Windows.Forms;
             number_text.Text = Menu.cd;
             //会員番号を編集できないようにする
             number_text.ReadOnly = true;
+            //calendarの選択可能な最小日時を今日にする
+            date_text.MinDate= DateTime.Today;
         }
         /// <summary>
         /// 入力項目を内容確認画面に渡す
@@ -26,8 +28,7 @@ using System.Windows.Forms;
         /// <param name="e"></param>
         private void Reserve_check_button(object sender, EventArgs e)
         {
-           
-            
+            //施設入力項目と時間入力項目が空白じゃないかどうか
             if (nameText.Text != "" &&service_down.SelectedIndex.ToString()!="-1"
                 &&time_down.SelectedIndex.ToString()!="-1") { 
                 //内容確認画面情報を取得
@@ -60,7 +61,7 @@ using System.Windows.Forms;
             //エラーメッセージ表示
             else
             {
-                MessageBox.Show("入力エラー", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("入力エラー。入力していただいた項目にミスがあります。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

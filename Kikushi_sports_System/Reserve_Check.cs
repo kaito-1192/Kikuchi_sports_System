@@ -35,8 +35,10 @@ using System.Data.SQLite;
         /// <param name="e"></param>
         private void Reserve_button_Click(object sender, EventArgs e)
         {
+         //コネクション設定
             SQLiteConnection ResCon = new SQLiteConnection("Data Source=Reserve_Table.db");
             {
+                //DBの接続解除
                 ResCon.Open();
                 using (SQLiteTransaction trans = ResCon.BeginTransaction())
                 {
@@ -44,16 +46,26 @@ using System.Data.SQLite;
                     //インサート文
                    cmd.CommandText = "INSERT INTO Res_table(CD,r_name,service,date,time)VALUES(@CD,@r_name,@service,@date,@time)";
 
+                    //会員番号のパラメータ定義
                     cmd.Parameters.Add("CD", DbType.String);
+                    //氏名のパラメータ定義
                     cmd.Parameters.Add("r_name", DbType.String);
+                    //利用施設のパラメータ定義
                     cmd.Parameters.Add("service", DbType.String);
+                    //日付のパラメータ定義
                     cmd.Parameters.Add("date", DbType.String);
+                    //時間のパラメータ定義
                     cmd.Parameters.Add("time", DbType.String);
 
+                    //会員番号のパラメータ
                     cmd.Parameters["CD"].Value = number_text.Text;
+                    //氏名のパラメータ
                     cmd.Parameters["r_name"].Value = name_text.Text;
+                    //利用施設のパラメータ
                     cmd.Parameters["service"].Value = service_text.Text;
+                    //日付のパラメータ
                     cmd.Parameters["date"].Value = date_text.Text;
+                    //時間のパラメータ
                     cmd.Parameters["time"].Value = time_text.Text;    
 
                     cmd.ExecuteNonQuery();

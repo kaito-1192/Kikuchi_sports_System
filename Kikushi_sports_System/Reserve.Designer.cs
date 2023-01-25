@@ -44,6 +44,7 @@
             // number_text
             // 
             this.number_text.Location = new System.Drawing.Point(86, 55);
+            this.number_text.MaxLength = 3;
             this.number_text.Name = "number_text";
             this.number_text.Size = new System.Drawing.Size(125, 27);
             this.number_text.TabIndex = 0;
@@ -156,6 +157,7 @@
             // 
             this.nameText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.nameText.Location = new System.Drawing.Point(356, 55);
+            this.nameText.MaxLength = 10;
             this.nameText.Name = "nameText";
             this.nameText.ShortcutsEnabled = false;
             this.nameText.Size = new System.Drawing.Size(125, 27);

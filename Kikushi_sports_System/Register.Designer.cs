@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.addressText = new System.Windows.Forms.TextBox();
             this.birthText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.addressText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +62,7 @@
             // 
             this.nameText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.nameText.Location = new System.Drawing.Point(119, 62);
+            this.nameText.MaxLength = 10;
             this.nameText.Name = "nameText";
             this.nameText.ShortcutsEnabled = false;
             this.nameText.Size = new System.Drawing.Size(125, 27);
@@ -114,15 +115,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "生年月日";
             // 
-            // addressText
-            // 
-            this.addressText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.addressText.Location = new System.Drawing.Point(119, 150);
-            this.addressText.Name = "addressText";
-            this.addressText.ShortcutsEnabled = false;
-            this.addressText.Size = new System.Drawing.Size(125, 27);
-            this.addressText.TabIndex = 7;
-            // 
             // birthText
             // 
             this.birthText.ImeMode = System.Windows.Forms.ImeMode.Disable;
@@ -146,7 +138,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(270, 317);
+            this.button2.Location = new System.Drawing.Point(268, 357);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 54);
             this.button2.TabIndex = 10;
@@ -157,7 +149,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(119, 220);
+            this.label8.Location = new System.Drawing.Point(118, 242);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 20);
             this.label8.TabIndex = 13;
@@ -166,7 +158,7 @@
             // passText
             // 
             this.passText.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.passText.Location = new System.Drawing.Point(119, 243);
+            this.passText.Location = new System.Drawing.Point(118, 265);
             this.passText.MaxLength = 8;
             this.passText.Name = "passText";
             this.passText.ShortcutsEnabled = false;
@@ -177,7 +169,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(189, 220);
+            this.label9.Location = new System.Drawing.Point(188, 242);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 15;
@@ -186,7 +178,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(250, 246);
+            this.label10.Location = new System.Drawing.Point(249, 268);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 20);
             this.label10.TabIndex = 16;
@@ -196,7 +188,8 @@
             // passText2
             // 
             this.passText2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.passText2.Location = new System.Drawing.Point(424, 239);
+            this.passText2.Location = new System.Drawing.Point(424, 265);
+            this.passText2.MaxLength = 8;
             this.passText2.Name = "passText2";
             this.passText2.ShortcutsEnabled = false;
             this.passText2.Size = new System.Drawing.Size(125, 27);
@@ -206,7 +199,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(424, 208);
+            this.label11.Location = new System.Drawing.Point(424, 242);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(119, 20);
             this.label11.TabIndex = 18;
@@ -239,11 +232,19 @@
             this.label12.TabIndex = 21;
             this.label12.Text = "例 19900101";
             // 
+            // addressText
+            // 
+            this.addressText.Location = new System.Drawing.Point(119, 150);
+            this.addressText.Name = "addressText";
+            this.addressText.Size = new System.Drawing.Size(125, 27);
+            this.addressText.TabIndex = 22;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addressText);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -256,7 +257,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.birthText);
-            this.Controls.Add(this.addressText);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -281,7 +281,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox addressText;
         private System.Windows.Forms.TextBox birthText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -294,4 +293,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
-    }
+    private System.Windows.Forms.TextBox addressText;
+}

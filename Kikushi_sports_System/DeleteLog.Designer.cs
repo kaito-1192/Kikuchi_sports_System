@@ -59,6 +59,7 @@
             // 
             this.passText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passText.Location = new System.Drawing.Point(320, 206);
+            this.passText.MaxLength = 8;
             this.passText.Name = "passText";
             this.passText.Size = new System.Drawing.Size(125, 27);
             this.passText.TabIndex = 10;
@@ -75,6 +76,7 @@
             // numberText
             // 
             this.numberText.Location = new System.Drawing.Point(320, 99);
+            this.numberText.MaxLength = 3;
             this.numberText.Name = "numberText";
             this.numberText.Size = new System.Drawing.Size(125, 27);
             this.numberText.TabIndex = 8;
