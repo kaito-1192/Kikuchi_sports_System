@@ -75,11 +75,13 @@
             // 
             // numberText
             // 
+            this.numberText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.numberText.Location = new System.Drawing.Point(320, 99);
             this.numberText.MaxLength = 3;
             this.numberText.Name = "numberText";
             this.numberText.Size = new System.Drawing.Size(125, 27);
             this.numberText.TabIndex = 8;
+            this.numberText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberText_KeyPress);
             // 
             // button1
             // 

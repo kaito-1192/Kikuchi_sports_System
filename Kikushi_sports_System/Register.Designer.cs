@@ -79,7 +79,7 @@
             // 
             // phoneText
             // 
-            this.phoneText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.phoneText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.phoneText.Location = new System.Drawing.Point(424, 62);
             this.phoneText.MaxLength = 15;
             this.phoneText.Name = "phoneText";
@@ -169,11 +169,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(188, 242);
+            this.label9.Location = new System.Drawing.Point(95, 295);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 20);
+            this.label9.Size = new System.Drawing.Size(175, 20);
             this.label9.TabIndex = 15;
-            this.label9.Text = "※4文字以上";
+            this.label9.Text = "※4文字以上　8文字以内";
             // 
             // label10
             // 
@@ -210,18 +210,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(514, 39);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 20);
+            this.label6.Size = new System.Drawing.Size(182, 20);
             this.label6.TabIndex = 19;
-            this.label6.Text = "※空白・ハイフンなし";
+            this.label6.Text = "※空白・ハイフンなし・小文字";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(514, 127);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 20);
+            this.label7.Size = new System.Drawing.Size(182, 20);
             this.label7.TabIndex = 20;
-            this.label7.Text = "※空白・ハイフンなし";
+            this.label7.Text = "※空白・ハイフンなし・小文字";
             // 
             // label12
             // 

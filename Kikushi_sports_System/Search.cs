@@ -55,8 +55,8 @@ using System.Data.SQLite;
                 // DataTableを生成する
                 DataTable dataTable = new DataTable();
 
-                //SQL生成(名前または番号を基にデータを検索)
-                cmd.CommandText = "SELECT CD,m_name,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE CD=@cdd AND  m_pass = @M_pass OR CD =@Cd ";
+                //SQL生成(番号を基に検索)
+                cmd.CommandText = "SELECT CD,m_name,m_phonenumber,m_address,m_birth,m_pass FROM t_product WHERE CD=@Cd AND CD=@Cdd";
                 //会員番号のパラメータ定義
                 cmd.Parameters.Add("Cd",DbType.String);
                 //会員番号のパラメータ
@@ -65,10 +65,7 @@ using System.Data.SQLite;
                 cmd.Parameters.Add("Cdd", DbType.String);
                 //認証用会員番号のパラメータ
                 cmd.Parameters["Cdd"].Value = Menu.cd;
-                //パスワードのパラメータ定義
-                cmd.Parameters.Add("M_pass",DbType.String);
-                //パスワードのパラメータ
-                cmd.Parameters["M_pass"].Value = inputText.Text;
+               
 
                 //dataTableの初期化
                 dataTable.Clear();
@@ -78,8 +75,8 @@ using System.Data.SQLite;
                 //detaTableに結果がないとき(行が0のとき)エラーメッセージを表示
                 if (dataTable.Rows.Count == 0)
                 {
-                    MessageBox.Show("検索結果がありませんでした。" +
-                        "自分の会員番号かパスワードを入力してください。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("検索結果がありませんでした。" +
+                    "自分の会員番号かパスワードを入力してください。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -120,6 +117,24 @@ using System.Data.SQLite;
             //検索画面を非表示
             this.Visible = false;
         }
-
-       
+    /// <summary>
+    /// 電話番号項目の制約
+    ///  Backスペースは有効
+    ///  文字は入力させない
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void inputText_KeyPress(object sender, KeyPressEventArgs e)
+    {
+        //バックスペースが押された時は有効（Deleteキーも有効）
+        if (e.KeyChar == '\b')
+        {
+            return;
+        }
+        //数値0～9以外が押された時はイベントをキャンセルする
+        if ((e.KeyChar < '0' || '9' < e.KeyChar))
+        {
+            e.Handled = true;
+        }
     }
+}

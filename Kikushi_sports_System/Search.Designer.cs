@@ -37,10 +37,13 @@
             // 
             // inputText
             // 
+            this.inputText.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.inputText.Location = new System.Drawing.Point(62, 91);
+            this.inputText.MaxLength = 3;
             this.inputText.Name = "inputText";
-            this.inputText.Size = new System.Drawing.Size(176, 27);
+            this.inputText.Size = new System.Drawing.Size(85, 27);
             this.inputText.TabIndex = 0;
+            this.inputText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputText_KeyPress);
             // 
             // dataGridView1
             // 
@@ -58,7 +61,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(283, 56);
+            this.button1.Location = new System.Drawing.Point(194, 91);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 62);
             this.button1.TabIndex = 2;
@@ -69,11 +72,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 56);
+            this.label1.Location = new System.Drawing.Point(25, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 20);
+            this.label1.Size = new System.Drawing.Size(174, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "会員番号またはパスワードを入力";
+            this.label1.Text = "検索したい会員番号を入力";
             // 
             // button2
             // 
@@ -110,4 +113,4 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox inputText;
         private System.Windows.Forms.Button button2;
-    }
+}

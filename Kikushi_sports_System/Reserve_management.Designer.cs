@@ -72,7 +72,9 @@
             // 
             // Reserve_Number_Text
             // 
+            this.Reserve_Number_Text.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Reserve_Number_Text.Location = new System.Drawing.Point(44, 314);
+            this.Reserve_Number_Text.MaxLength = 3;
             this.Reserve_Number_Text.Name = "Reserve_Number_Text";
             this.Reserve_Number_Text.Size = new System.Drawing.Size(66, 27);
             this.Reserve_Number_Text.TabIndex = 5;

@@ -115,4 +115,24 @@ using System.Data.SQLite;
                 _isOpen = false;
             }
         }
+    /// <summary>
+    /// 電話番号項目の制約
+    ///  Backスペースは有効
+    ///  文字は入力させない
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void numberText_KeyPress(object sender, KeyPressEventArgs e)
+    {
+        //バックスペースが押された時は有効（Deleteキーも有効）
+        if (e.KeyChar == '\b')
+        {
+            return;
+        }
+        //数値0～9以外が押された時はイベントをキャンセルする
+        if ((e.KeyChar < '0' || '9' < e.KeyChar))
+        {
+            e.Handled = true;
+        }
     }
+}
