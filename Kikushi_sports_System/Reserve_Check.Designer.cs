@@ -39,6 +39,7 @@
             this.Reserve_button = new System.Windows.Forms.Button();
             this.name_text = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Back_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // number_text
@@ -131,11 +132,22 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "氏名";
             // 
+            // Back_button
+            // 
+            this.Back_button.Location = new System.Drawing.Point(666, 379);
+            this.Back_button.Name = "Back_button";
+            this.Back_button.Size = new System.Drawing.Size(122, 59);
+            this.Back_button.TabIndex = 11;
+            this.Back_button.Text = "前の画面に戻る";
+            this.Back_button.UseVisualStyleBackColor = true;
+            this.Back_button.Click += new System.EventHandler(this.Back_button_Click);
+            // 
             // Reserve_Check
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Back_button);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.name_text);
             this.Controls.Add(this.Reserve_button);
@@ -167,4 +179,5 @@
         private System.Windows.Forms.Button Reserve_button;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox name_text;
-    }
+    private System.Windows.Forms.Button Back_button;
+}

@@ -84,4 +84,18 @@ using System.Data.SQLite;
                 }
             }
         }
+    /// <summary>
+    /// 前の画面に戻る処理
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void Back_button_Click(object sender, EventArgs e)
+    {
+        //予約画面情報を取得
+        Reserve res = new Reserve();
+        //予約画面を表示
+        res.Show();
+        //予約確認画面を非表示
+        this.Visible = false;
     }
+}
